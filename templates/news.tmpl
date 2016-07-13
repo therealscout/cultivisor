@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Cultivisor Admin</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="/static/adminassets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+		<!-- THEME CSS -->
+		<link href="/static/adminassets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+        <!-- <link rel="stylesheet" href="/static/plugins/datatables/css/custom.css" media="screen" title="no title" charset="utf-8"> -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.css"/>
+
+
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
+
+
+		<!-- WRAPPER -->
+        <div id="wrapper" class="clearfix">
+
+			<!--
+				ASIDE
+				Keep it outside of #wrapper (responsive purpose)
+			-->
+
+			{{ template "adminnavbar.tmpl" . }}
+
+			<!--
+				MIDDLE
+			-->
+			<section id="middle">
+				<div id="content" class="dashboard padding-20">
+                    <div class="form-group">
+                        <a href="/news/add" class="btn btn-3d btn-md btn-reveal btn-teal">
+	                        <i class="fa fa-stack-overflow"></i>
+	                        <span>New Article</span>
+	                    </a>
+                    </div>
+                    <table id="newsTable" class="table table-striped table-hover table-bordered responsive">
+                        <thead>
+                            <tr>
+								<th>Title</th>
+								<th>FirstName</th>
+								<th>LastName</th>
+								<th>Description</th>
+								<th>Body</th>
+								<th>ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ range $news := .allNews }}
+                                <!-- <tr class="clickable" data-url="/news/{{ $news.Id }}"></tr> -->
+								<tr data-newsId="{{ $news.Id}}" class="news">
+									<td>{{ $news.Title }}</td>
+									<td>{{ $news.FirstName }}</td>
+									<td>{{ $news.LastName }}</td>
+									<td>{{ $news.Description }}</td>
+									<td>{{ $news.Body }}</td>
+									<td>{{ $news.Id }}</td>
+                                </tr>
+                            {{ end }}
+                        </tbody>
+                    </table>
+                </div>
+
+			</section>
+
+		</div>
+
+
+
+
+		<!-- JAVASCRIPT FILES -->
+
+		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
+		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>
+
+		{{ template "alert.tmpl" . }}
+        <!-- CSS DATATABLES -->
+        <link href="/static/css/layout-datatables.css" rel="stylesheet" type="text/css" />
+
+        <!-- JS DATATABLES -->
+		<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.tableTools.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.colReorder.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.scroller.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/dataTables.bootstrap.js"></script>
+        <!-- <script src="/static/plugins/datatables/js/custom.js" charset="utf-8"></script> -->
+        <script type="text/javascript">
+			$(document).ready(function() {
+				$('tr.news').click(function() {
+					window.location.href = '/news/' + $(this).attr('data-newsId')
+				});
+			});
+            $('#newsTable').DataTable({
+                "lengthMenu": [5,10,15,20],
+                // "columnDefs": [
+                //     {"orderable":false, "targets": [3]}
+                // ]
+            });
+
+        </script>
+	</body>
+</html>

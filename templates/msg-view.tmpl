@@ -1,0 +1,143 @@
+
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Cultivisor Admin</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="/static/adminassets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="/static/adminassets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
+
+
+		<!-- WRAPPER -->
+		<div id="wrapper" class="clearfix">
+
+			<!--
+				ASIDE
+				Keep it outside of #wrapper (responsive purpose)
+			-->
+
+			{{ template "adminnavbar.tmpl" . }}
+
+			<!--
+				MIDDLE
+			-->
+			<section id="middle">
+				<div id="content" class="dashboard padding-20">
+
+					<div id="delAlert" class="alert alert-danger text-center hide" role="alert">
+						<form class="" style="margin-bottom: 0;" action="/delmsg" method="post">
+							<input type="hidden" name="id" value="{{ .msg.Id }}">
+							Are You Sure You Want To Delete This Article?
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="btn btn-danger btn-lg">Yes</button>
+							&nbsp;
+							<a id="delCancel" class="btn btn-default btn-lg">No</a>
+						</form>
+					</div>
+
+                    <div class="col-md-6">
+                        <table id="newsTable" class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ .msg.FullName }}</td>
+                                    <td>{{ .msg.Email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-6">
+                        <table id="newsTable" class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+									<td>{{ .msg.Subject }}</td>
+                                    <td>{{ .msg.Phone }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-6">
+                        <table id="newsTable" class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ .msg.Message }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-3">
+						<a href="/inbox" class="btn btn-3d btn-warning btn-md btn-block margin-top-30">Cancel</a>
+                    </div>
+					<div class="col-md-3">
+
+						<a id="delButton" class="btn btn-3d btn-danger btn-md btn-block margin-top-30">Delete</a>
+					</div>
+
+				</div>
+			</section>
+			<!-- /MIDDLE -->
+
+		</div>
+
+
+
+
+		<!-- JAVASCRIPT FILES -->
+
+		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
+		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>
+
+		{{ template "alert.tmpl" . }}
+		<!-- PAGE LEVEL SCRIPT -->
+		<script type="text/javascript">
+		$('#delButton').click(function(){
+			$('#delAlert').removeClass('hide')
+		})
+		$('#delCancel').click(function(){
+			$('#delAlert').addClass('hide')
+		})
+		</script>
+
+
+	</body>
+</html>

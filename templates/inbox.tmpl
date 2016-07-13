@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Cultivisor Admin</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="/static/adminassets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+		<!-- THEME CSS -->
+		<link href="/static/adminassets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+        <!-- <link rel="stylesheet" href="/static/plugins/datatables/css/custom.css" media="screen" title="no title" charset="utf-8"> -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.css"/>
+
+
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
+
+
+		<!-- WRAPPER -->
+		<div id="wrapper" class="clearfix">
+
+			{{ template "adminnavbar.tmpl" . }}
+
+			<!--
+				MIDDLE
+			-->
+			<section id="middle">
+				<div id="content" class="dashboard padding-20">
+                    <table id="newsTable" class="table table-striped table-hover table-bordered responsive">
+                        <thead>
+                            <tr>
+								<th>Full Name</th>
+								<th>Subject</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Message</th>
+								<th>Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ range $allMsgs := .allMsgs }}
+                                <!-- <tr class="clickable" data-url="/message/{{ $allMsgs.Id }}"></tr> -->
+								<tr data-messageId="{{ $allMsgs.Id }}"class="message">
+									<td>{{ $allMsgs.FullName }}</td>
+									<td>{{ $allMsgs.Subject }}</td>
+                                    <td>{{ $allMsgs.Email }}</td>
+                                    <td>{{ $allMsgs.Phone }}</td>
+                                    <td>{{ $allMsgs.Message }}</td>
+									<td>{{ $allMsgs.Id }}</td>
+                                </tr>
+                            {{ end }}
+                        </tbody>
+                    </table>
+                </div>
+			</section>
+			<!-- /MIDDLE -->
+
+		</div>
+
+
+
+
+		<!-- JAVASCRIPT FILES -->
+
+		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
+		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>
+
+        <!-- CSS DATATABLES -->
+        <link href="/static/css/layout-datatables.css" rel="stylesheet" type="text/css" />
+		{{ template "alert.tmpl" . }}
+
+
+        <!-- JS DATATABLES -->
+		<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.tableTools.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.colReorder.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.scroller.min.js"></script>
+        <script type="text/javascript" src="/static/plugins/datatables/dataTables.bootstrap.js"></script>
+        <!-- <script src="/static/plugins/datatables/js/custom.js" charset="utf-8"></script> -->
+        <script type="text/javascript">
+			$(document).ready(function() {
+				$('tr.message').click(function() {
+					window.location.href = '/message/' + $(this).attr('data-messageId')
+				});
+			});
+            $('#newsTable').DataTable({
+                "lengthMenu": [5,10,15,20],
+                // "columnDefs": [
+                //     {"orderable":false, "targets": [4]}
+                // ]
+            });
+
+        </script>
+	</body>
+</html>

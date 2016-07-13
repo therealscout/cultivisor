@@ -1,0 +1,94 @@
+<aside id="aside">
+    <!--
+        Always open:
+        <li class="active alays-open">
+
+        LABELS:
+            <span class="label label-danger pull-right">1</span>
+            <span class="label label-default pull-right">1</span>
+            <span class="label label-warning pull-right">1</span>
+            <span class="label label-success pull-right">1</span>
+            <span class="label label-info pull-right">1</span>
+    -->
+    <nav id="sideNav"><!-- MAIN MENU -->
+        <ul class="nav nav-list">
+            <li {{ if eq .page "inbox"}}class="active"{{ end }}>
+                <a href="/inbox">
+                    <i class="main-icon fa fa-envelope"></i> <span>Inbox</span>
+                </a>
+            </li>
+            <li {{ if eq .page "news"}}class="active"{{ end }}>
+                <a href="/news">
+                    <i class="main-icon fa fa-stack-overflow"></i> <span>News</span>
+                </a>
+            </li>
+            <li {{ if eq .page "employee"}}class="active"{{ end }}>
+                <a href="/employee">
+                    <i class="main-icon fa fa-group"></i> <span>Employees</span>
+                </a>
+            </li>
+            <li {{ if eq .page "calendar"}}class="active"{{ end }}>
+                <a href="/calendar">
+                    <i class="main-icon fa fa-calendar"></i> <span>Calendar</span>
+                </a>
+            </li>
+            <li {{ if eq .page "settings"}}class="active"{{ end }}>
+                <a href="/settings">
+                    <i class="main-icon fa fa-cogs"></i> <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="/login">
+                    <i class="main-icon fa fa-power-off"></i> <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- SECOND MAIN LIST -->
+
+    </nav>
+
+    <span id="asidebg"><!-- aside fixed background --></span>
+</aside>
+<!-- /ASIDE -->
+
+
+<!-- HEADER -->
+<header id="header">
+
+    <!-- Mobile Button -->
+    <button id="mobileMenuBtn"></button>
+
+    <!-- Logo -->
+    <span class="logo pull-left">
+        <a href="/"><img src="/static/images/CultivisorLogoDark.png" alt="admin panel" height="35" /></a>
+    </span>
+
+    <!-- <form method="get" action="page-search.html" class="search pull-left hidden-xs">
+        <input type="text" class="form-control" name="k" placeholder="Search for something..." />
+    </form> -->
+
+    <nav>
+
+        <!-- OPTIONS LIST -->
+        <ul class="nav pull-right">
+
+            <!-- USER OPTIONS -->
+            <li class="dropdown pull-left">
+                    <img class="user-avatar" alt="" src="/static/adminassets/images/noavatar.jpg" height="34" />
+                    <span class="user-name">
+                        <span class="hidden-xs">
+                            Admin
+                        </span>
+                    </span>
+
+            </li>
+            <!-- /USER OPTIONS -->
+
+        </ul>
+        <!-- /OPTIONS LIST -->
+
+    </nav>
+
+</header>
+<!-- /HEADER -->

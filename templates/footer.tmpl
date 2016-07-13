@@ -1,0 +1,105 @@
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 col-xs-12">
+                <!-- Footer Logo -->
+                <img src="/static/images/CultivisorLogoDark.png" alt="" />
+
+                <!-- Small Description -->
+                <p>Advice and Tools to Cultivate Employee Talent</p>
+
+                <!-- Contact Address -->
+                <address>
+                    <ul class="list-unstyled">
+                        <li class="footer-sprite address">
+                            PO Box 2222<br>
+                            50 Rolling Hill Drive<br>
+                            Lititz, Pa 17543<br>
+                        </li>
+                        <li class="footer-sprite phone">
+                            USA Tel: 1-717-917-8608
+                        </li>
+                        <li class="footer-sprite email">
+                            <a href="mailto:support@yourname.com">ken.johnson@cultivisor.com</a>
+                        </li>
+                    </ul>
+                </address>
+                <div class="margin-top-20">
+                    <a href="http://www.facebook.com" target="_blank" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
+
+                        <i class="icon-facebook"></i>
+                        <i class="icon-facebook"></i>
+                    </a>
+
+                    <a href="http://www.twitter.com" target="_blank" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
+                        <i class="icon-twitter"></i>
+                        <i class="icon-twitter"></i>
+                    </a>
+
+                    <a href="http://www.youtube.com" target="_blank" class="social-icon social-icon-border social-youtube pull-left" data-toggle="tooltip" data-placement="top" title="YouTube">
+                        <i class="icon-youtube"></i>
+	                    <i class="icon-youtube"></i>>
+                    </a>
+
+                </div>
+                <!-- /Contact Address -->
+
+            </div>
+
+            <div class="col-md-4 hidden-xs">
+                <!-- Latest Blog Post -->
+                    <h4 class="letter-spacing-1">OUR LATEST <span>NEWS</span></h4>
+                {{ range $news := .footerNews}}
+                <ul class="footer-posts list-unstyled">
+                    <li>
+                        <a href="/article/{{ $news.Id }}">
+                            {{ $news.Title }}
+                        </a>
+                        <small>{{ prettyDate $news.Id }}</small>
+                    </li>
+                    <li></li>
+                </ul>
+                {{ end }}
+                <!-- /Latest Blog Post -->
+
+            </div>
+
+            <div class="col-md-4 col-xs-12">
+
+                <!-- Links -->
+                <h4 class="letter-spacing-1">EXPLORE <span>CULTIVISOR</span></h4>
+                <ul class="footer-links list-unstyled">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#whatwedo">WHAT WE DO</a></li>
+                    <li><a href="#perform"><span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span></a></li>
+                    <li><a href="#perform">ABOUT PERFORM</a></li>
+                    <li><a href="#pricing">PERFORM PRICING</a></li>
+                    <li><a href="#ourteam">OUR TEAM</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
+                </ul>
+                <!-- /Links -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <ul class="pull-right nomargin list-inline mobile-block">
+                <li><a href="/terms">Terms &amp; Conditions</a></li>
+                <li>&bull;</li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li>&bull;</li>
+                <li><a href="login">Admin</a></li>
+            </ul>
+            &copy; 1996 by Cultivisor, Ltd.
+        </div>
+    </div>
+</footer>
+<!-- /FOOTER -->

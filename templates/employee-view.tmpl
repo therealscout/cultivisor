@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Cultivisor Admin</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="/static/adminassets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="/static/adminassets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
+
+
+		<!-- WRAPPER -->
+		<div id="wrapper" class="clearfix">
+
+			<!--
+				ASIDE
+				Keep it outside of #wrapper (responsive purpose)
+			-->
+
+			{{ template "adminnavbar.tmpl" . }}
+
+			<!--
+				MIDDLE
+			-->
+			<section id="middle">
+				<div id="content" class="dashboard padding-20">
+
+					<div id="delAlert" class="alert alert-danger text-center hide" role="alert">
+						<form class="" style="margin-bottom: 0;" action="/delemployee" method="post">
+							<input type="hidden" name="id" value="{{ .employee.Id }}">
+							Are You Sure You Want To Delete This Employee?
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="btn btn-danger btn-lg">Yes</button>
+							&nbsp;
+							<a id="delCancel" class="btn btn-default btn-lg">No</a>
+						</form>
+					</div>
+
+					<form class="validate" action="/employee" method="post" enctype="multipart/form-data">
+						<fieldset>
+							<!-- required [php action request] -->
+							<input type="hidden" name="action" value="contact_send" />
+
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-3 col-sm-3">
+										<label>First Name *</label>
+										<input type="text" name="firstname" value="{{ .employee.FirstName }}" class="form-control required">
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<label>Last Name *</label>
+										<input type="text" name="lastname" value="{{ .employee.LastName }}" class="form-control required">
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<label>Title *</label>
+										<input type="text" name="title" value="{{ .employee.Title }}" class="form-control required">
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<label>Location *</label>
+										<input type="text" name="title" value="{{ .employee.Location }}" class="form-control required">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-5 col-sm-5">
+										<label>Description *</label>
+										<small>(Max Character Length 300)</small>
+										<textarea style="resize:none;" maxlength="300" name="description" rows="8" class="form-control required">{{ .employee.Description }}</textarea>
+										<label>
+											File Attachment
+											<small class="text-muted"></small>
+										</label>
+										<!-- custom file upload -->
+										<input class="custom-file-upload" name="image" type="file" id="file" data-btn-text="Select a File" />
+										<small class="text-muted block">Max file size: 10Mb (jpg/png) Supported sizes: (920x1400, 460x700, 230x350) &nbsp;&nbsp;&nbsp; Supported sizes: (1200x800, 900x600, 600x400)</small>
+										<div class="text-right">
+											<button type="submit" class="btn btn-3d btn-teal btn-md margin-right-10 margin-top-30">
+												{{ if .employee.Id }}Edit{{ else }}Add{{ end }} Employee
+											</button>
+											<a href="/employee" class="btn btn-3d btn-warning btn-md margin-right-10 margin-top-30">Cancel</a>
+											<a id="delButton" class="btn btn-3d btn-danger btn-md margin-right-10 margin-top-30">Delete</a>
+										</div>
+									</div>
+								</div>
+								{{ if .employee.Image }}
+								<div class="col-md-4 col-md-offset-1">
+									<img src="/upload/employee/{{ .employee.Id }}.png" class="img-responsive" alt="" />
+								</div>
+								{{ end }}
+							</div>
+
+						</fieldset>
+
+						<div class="row">
+
+						</div>
+						{{ if .employee.Id }}
+							<input type="hidden" name="id" value="{{ .employee.Id }}">
+						{{ end }}
+					</form>
+				</div>
+			</section>
+			<!-- /MIDDLE -->
+
+		</div>
+
+
+
+
+		<!-- JAVASCRIPT FILES -->
+
+		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
+		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>
+
+		{{ template "alert.tmpl" . }}
+		<!-- PAGE LEVEL SCRIPT -->
+		<script type="text/javascript">
+			$('#delButton').click(function(){
+				$('#delAlert').removeClass('hide')
+			})
+			$('#delCancel').click(function(){
+				$('#delAlert').addClass('hide')
+			})
+			$(document).ready(function(){
+				{{ if not .employee.Id }}
+					setTimeout(function() {
+						$('.file-upload-input').addClass('required');
+
+					}, 100)
+				{{ end }}
+			});
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,13 @@
+{{ if .alert }}
+    <script type="text/javascript">
+        _toastr("{{ .alert }}","top-right","info",false);
+    </script>
+{{ else if .alertError }}
+    <script type="text/javascript">
+        _toastr("{{ .alertError }}","top-right","error",false);
+    </script>
+{{ else if .alertSuccess }}
+    <script type="text/javascript">
+        _toastr("{{ .alertSuccess }}","top-right","success",false);
+    </script>
+{{ end }}
