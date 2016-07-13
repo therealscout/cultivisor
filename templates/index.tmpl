@@ -521,8 +521,8 @@
 					<div class="row">
 						<!-- item -->
 						{{ range $employee := .allEmployee }}
-							<div class="col-md-3 col-xs-12">
-								<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center margin-bottom-20">
 									<div class="front">
 										<div class="box1 box-default">
 											<span class="box-icon-title">
@@ -531,21 +531,20 @@
 												{{ end }}
 												<h2>{{ $employee.FirstName }} {{ $employee.LastName }}</h2>
 												<small>/ {{ $employee.Title }}</small>
-												<small>/ {{ $employee.Location }}</small>
 											</span>
 										</div>
 									</div>
 
 									<div class="back">
 										<div class="box2 box-default">
-											<div style="height:350px;">
+											<div style="height:375px;">
 
 												<h4 class="nomargin">{{ $employee.FirstName }} {{ $employee.LastName }}</h4>
-												<small>/ {{ $employee.Title }}</small>
+												<small>/ Based In {{ $employee.Location }}</small>
 
 												<hr/>
 
-												<p>{{ $employee.Description }}</p>
+												<p style="font-size:12px;">{{ $employee.Description }}</p>
 
 												<hr/>
 
@@ -574,7 +573,7 @@
 			</section>
 			<!-- /TEAM -->
 			<!-- PARALLAX -->
-			<section class="parallax parallax-2 hidden-xs" style="background-image: url('/static/images/demo/1200x800/12-min.jpg');">
+			<section class="parallax parallax-2 hidden-sm hidden-xs" style="background-image: url('/static/images/demo/1200x800/12-min.jpg');">
 				<div class="overlay dark-8"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container">

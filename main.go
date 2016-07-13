@@ -310,6 +310,7 @@ var addEmployee = web.Route{"POST", "/employee", func(w http.ResponseWriter, r *
 	employee.LastName = r.FormValue("lastname")
 	employee.Title = r.FormValue("title")
 	employee.Description = r.FormValue("description")
+	employee.Location = r.FormValue("location")
 
 	r.ParseMultipartForm(32 << 20)
 	file, handler, err := r.FormFile("image")

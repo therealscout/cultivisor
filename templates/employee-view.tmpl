@@ -76,7 +76,7 @@
 									</div>
 									<div class="col-md-3 col-sm-3">
 										<label>Location *</label>
-										<input type="text" name="title" value="{{ .employee.Location }}" class="form-control required">
+										<input type="text" name="location" value="{{ .employee.Location }}" placeholder="City, State, Country" class="form-control required">
 									</div>
 								</div>
 							</div>
@@ -84,15 +84,15 @@
 								<div class="form-group">
 									<div class="col-md-5 col-sm-5">
 										<label>Description *</label>
-										<small>(Max Character Length 300)</small>
-										<textarea style="resize:none;" maxlength="300" name="description" rows="8" class="form-control required">{{ .employee.Description }}</textarea>
+										<small>(Max Character Length 510)</small>
+										<textarea style="resize:none;" maxlength="510" name="description" rows="8" class="form-control required">{{ .employee.Description }}</textarea>
 										<label>
 											File Attachment
 											<small class="text-muted"></small>
 										</label>
 										<!-- custom file upload -->
 										<input class="custom-file-upload" name="image" type="file" id="file" data-btn-text="Select a File" />
-										<small class="text-muted block">Max file size: 10Mb (jpg/png) Supported sizes: (920x1400, 460x700, 230x350) &nbsp;&nbsp;&nbsp; Supported sizes: (1200x800, 900x600, 600x400)</small>
+										<small class="text-muted block">Max file size: 10Mb (jpg/png) Supported sizes: (920x1400, 460x700, 230x350) &nbsp;&nbsp;&nbsp;</small>
 										<div class="text-right">
 											<button type="submit" class="btn btn-3d btn-teal btn-md margin-right-10 margin-top-30">
 												{{ if .employee.Id }}Edit{{ else }}Add{{ end }} Employee
