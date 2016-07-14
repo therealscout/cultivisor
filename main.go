@@ -31,8 +31,8 @@ func init() {
 }
 
 func main() {
-	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy)
-	mux.AddSecureRoutes(ADMIN, inbox, news, newsView, addNews, addEmployee, calendar, msgView, delNews, delMsg, delEmployee, settings, employee, employeeView)
+	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq)
+	mux.AddSecureRoutes(ADMIN, inbox, news, newsView, addNews, addEmployee, calendar, msgView, delNews, delMsg, delEmployee, settings, employee, employeeView, question)
 	fmt.Println("------------------------------------------REMEMBER TO REGISTER ALL NEW ROUTES")
 	log.Fatal(http.ListenAndServe(":8888", mux))
 }
@@ -88,6 +88,12 @@ var privacy = web.Route{"GET", "/privacy", func(w http.ResponseWriter, r *http.R
 	})
 }}
 
+var faq = web.Route{"GET", "/faq", func(w http.ResponseWriter, r *http.Request) {
+	tmpl.Render(w, r, "faq.tmpl", web.Model{
+		"footerNews": getFooterNews(),
+	})
+}}
+
 // -----------------END USER PAGES-------------------
 
 // -----------------USER CONTROLLERS-------------------
@@ -104,25 +110,20 @@ var login = web.Route{"POST", "/login", func(w http.ResponseWriter, r *http.Requ
 }}
 
 var send = web.Route{"POST", "/send", func(w http.ResponseWriter, r *http.Request) {
-	date := time.Now().UnixNano()
-	id := strconv.Itoa(int(date))
 
-	fullname := r.FormValue("fullname")
-	email := r.FormValue("email")
-	phone := r.FormValue("phone")
-	subject := r.FormValue("subject")
-	message := r.FormValue("message")
-
+	id := strconv.Itoa(int(time.Now().UnixNano()))
+	question, _ := strconv.ParseBool(r.FormValue("question"))
 	m := Message{
 		Id:       id,
-		FullName: fullname,
-		Email:    email,
-		Phone:    phone,
-		Subject:  subject,
-		Message:  message,
+		FullName: r.FormValue("fullname"),
+		Email:    r.FormValue("email"),
+		Phone:    r.FormValue("phone"),
+		Subject:  r.FormValue("subject"),
+		Message:  r.FormValue("message"),
+		Question: question,
 	}
 	db.Add("message", id, m)
-	web.SetSuccessRedirect(w, r, "#contact", "Message Sent")
+	web.SetSuccessRedirect(w, r, r.FormValue("redirect"), "Message Sent")
 }}
 
 // -----------------END USER CONTROLLERS-------------------
@@ -132,8 +133,35 @@ var send = web.Route{"POST", "/send", func(w http.ResponseWriter, r *http.Reques
 var inbox = web.Route{"GET", "/inbox", func(w http.ResponseWriter, r *http.Request) {
 	var allMsgs []Message
 	db.GetAll("message", &allMsgs)
+
+	var filteredMsgs []Message
+
+	for _, m := range allMsgs {
+		if !m.Question {
+			filteredMsgs = append(filteredMsgs, m)
+		}
+	}
+
 	tmpl.Render(w, r, "inbox.tmpl", web.Model{
-		"allMsgs": allMsgs,
+		"allMsgs": filteredMsgs,
+		"page":    "inbox",
+	})
+}}
+
+var question = web.Route{"GET", "/inbox/question", func(w http.ResponseWriter, r *http.Request) {
+	var allMsgs []Message
+	db.GetAll("message", &allMsgs)
+
+	var filteredMsgs []Message
+
+	for _, m := range allMsgs {
+		if m.Question {
+			filteredMsgs = append(filteredMsgs, m)
+		}
+	}
+
+	tmpl.Render(w, r, "question.tmpl", web.Model{
+		"allMsgs": filteredMsgs,
 		"page":    "inbox",
 	})
 }}

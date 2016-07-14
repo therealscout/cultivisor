@@ -34,12 +34,7 @@
 
 
 		<!-- WRAPPER -->
-        <div id="wrapper" class="clearfix">
-
-			<!--
-				ASIDE
-				Keep it outside of #wrapper (responsive purpose)
-			-->
+		<div id="wrapper" class="clearfix">
 
 			{{ template "adminnavbar.tmpl" . }}
 
@@ -47,39 +42,47 @@
 				MIDDLE
 			-->
 			<section id="middle">
+
 				<div id="content" class="dashboard padding-20">
-                    <div class="form-group">
-                        <a href="/news/add" class="btn btn-3d btn-md btn-reveal btn-teal">
-	                        <i class="fa fa-stack-overflow"></i>
-	                        <span>New Article</span>
-	                    </a>
-                    </div>
-                    <table id="newsTable" class="table table-striped table-hover table-bordered responsive">
+
+					<div class="tabs nomargin">
+						<ul class="nav nav-tabs">
+							<li>
+								<a href="/inbox"><i class="fa fa-envelope"></i>Inbox</a>
+							</li>
+							<li class="active">
+								<a><i class="fa fa-question-circle"></i>Questions</a>
+
+							</li>
+
+						</ul>
+
+					</div>
+
+					<br>
+					<br>
+				    <table id="newsTable" class="table table-striped table-hover table-bordered responsive">
                         <thead>
                             <tr>
-								<th>Title</th>
-								<th>FirstName</th>
-								<th>LastName</th>
-								<th>Description</th>
-								<th>Body</th>
+								<th>Full Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{ range $news := .allNews }}
-                                <!-- <tr class="clickable" data-url="/news/{{ $news.Id }}"></tr> -->
-								<tr data-newsId="{{ $news.Id}}" class="news">
-									<td>{{ $news.Title }}</td>
-									<td>{{ $news.FirstName }}</td>
-									<td>{{ $news.LastName }}</td>
-									<td>{{ $news.Description }}</td>
-									<td>{{ $news.Body }}</td>
+                            {{ range $allMsgs := .allMsgs }}
+                                <!-- <tr class="clickable" data-url="/message/{{ $allMsgs.Id }}"></tr> -->
+								<tr data-messageId="{{ $allMsgs.Id }}"class="message">
+									<td>{{ $allMsgs.FullName }}</td>
+                                    <td>{{ $allMsgs.Email }}</td>
+                                    <td>{{ $allMsgs.Message }}</td>
                                 </tr>
                             {{ end }}
                         </tbody>
                     </table>
                 </div>
-
 			</section>
+			<!-- /MIDDLE -->
 
 		</div>
 
@@ -92,9 +95,10 @@
 		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>
 
-		{{ template "alert.tmpl" . }}
         <!-- CSS DATATABLES -->
         <link href="/static/css/layout-datatables.css" rel="stylesheet" type="text/css" />
+		{{ template "alert.tmpl" . }}
+
 
         <!-- JS DATATABLES -->
 		<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.js"></script>
@@ -106,14 +110,14 @@
         <!-- <script src="/static/plugins/datatables/js/custom.js" charset="utf-8"></script> -->
         <script type="text/javascript">
 			$(document).ready(function() {
-				$('tr.news').click(function() {
-					window.location.href = '/news/' + $(this).attr('data-newsId')
+				$('tr.message').click(function() {
+					window.location.href = '/message/' + $(this).attr('data-messageId')
 				});
 			});
             $('#newsTable').DataTable({
                 "lengthMenu": [5,10,15,20],
                 // "columnDefs": [
-                //     {"orderable":false, "targets": [3]}
+                //     {"orderable":false, "targets": [4]}
                 // ]
             });
 

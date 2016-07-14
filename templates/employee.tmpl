@@ -54,20 +54,17 @@
                             <tr>
 								<th>FirstName</th>
 								<th>LastName</th>
-								<th>Description</th>
 								<th>Location</th>
-                                <!-- <th>ID</th> -->
+								<th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
                             {{ range $employee := .allEmployees }}
-							<!-- <tr class="clickable" data-url="/employee/{{ $employee.Id }}"></tr> -->
                                 <tr data-employeeId="{{ $employee.Id }}" class="employee">
 									<td>{{ $employee.FirstName }}</td>
 									<td>{{ $employee.LastName }}</td>
-									<td>{{ $employee.Description }}</td>
 									<td>{{ $employee.Location }}</td>
-									<!-- <td>{{ $employee.Id }}</td> -->
+									<td>{{ $employee.Description }}</td>
                                 </tr>
                             {{ end }}
                         </tbody>

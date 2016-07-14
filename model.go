@@ -18,6 +18,7 @@ type Message struct {
 	Phone    string
 	Subject  string
 	Message  string
+	Question bool
 }
 
 type Employee struct {
