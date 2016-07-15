@@ -31,7 +31,7 @@ func init() {
 }
 
 func main() {
-	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq)
+	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout)
 	mux.AddSecureRoutes(ADMIN, inbox, news, newsView, addNews, addEmployee, calendar, msgView, delNews, delMsg, delEmployee, settings, employee, employeeView, question)
 	fmt.Println("------------------------------------------REMEMBER TO REGISTER ALL NEW ROUTES")
 	log.Fatal(http.ListenAndServe(":8888", mux))
@@ -107,6 +107,12 @@ var login = web.Route{"POST", "/login", func(w http.ResponseWriter, r *http.Requ
 		return
 	}
 	web.SetErrorRedirect(w, r, "/login", "Incorrect Email or Password")
+}}
+
+var logout = web.Route{"GET", "/logout", func(w http.ResponseWriter, r *http.Request) {
+	web.Logout(w)
+	web.SetSuccessRedirect(w, r, "/", "Logged Out")
+	return
 }}
 
 var send = web.Route{"POST", "/send", func(w http.ResponseWriter, r *http.Request) {
