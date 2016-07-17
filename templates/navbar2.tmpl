@@ -1,78 +1,60 @@
-<!-- TOP NAV -->
 <header id="topNav">
     <div class="container">
 
-        <!-- Mobile Menu Button -->
         <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
             <i class="fa fa-bars"></i>
         </button>
 
-        <!-- Logo -->
-        <a class="logo pull-left" href="/#top">
+        <a class="logo pull-left scrollTo" href="/#top">
             <img src="/static/images/CultivisorLogoDark.png" alt="" />
         </a>
 
-        <!--
-            Top Nav
-
-            AVAILABLE CLASSES:
-            submenu-dark = dark sub menu
-        -->
         <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
             <nav class="nav-main">
 
-                <!--
-                    .nav-onepage
-                    Required for onepage navigation links
-
-                    Add .external for an external link!
-                -->
                 <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-                    <li><!-- HOME -->
+                    <li class="active">
                         <a href="/#slider">
                             HOME
                         </a>
                     </li>
-                    <li><!-- WORK -->
-                        <a href="/#whatwedo">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="/#whatwedo">
                             WHAT WE DO
                         </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/whatwedo">What We Do</a></li>
+                            <li><a href="/workforceoptimization">WorkForce Optimization</a></li>
+                            <li><a href="/appraisal">Employee Appraisals</a></li>
+                            <li><a href="/perform"><span style="font-family:Orbitron;">P.E.R.F.O.R.M.</span></a></li>
+                        </ul>
                     </li>
-                    <li><!-- WORK -->
+                    <li>
                         <a href="/#perform" style="font-family:Orbitron;">
                             P.E.R.F.O.R.M.
                         </a>
                     </li>
-                    <li><!-- TEAM -->
+                    <li>
                         <a href="/#ourteam">
                              OUR TEAM
                         </a>
                     </li>
-                    <li><!-- SERVICES -->
+                    <li>
                         <a href="/#news">
                             NEWS
                         </a>
                     </li>
-                    <li><!-- TESTIMONIALS -->
+                    <li>
                         <a href="/#contact">
                             CONTACT US
                         </a>
                     </li>
-                    <li class="dropdown">
-    					<a class="dropdown-toggle" href="#">
-    						PAGES
-    					</a>
-    						<ul class="dropdown-menu">
-    							<li><a href="/perform"><span style="font-family:Orbitron;">P.E.R.F.O.R.M.</span> Page</a></li>
-                                <li><a href="/whatwedo">WhatWeDo Page</a></li>
-                                <li><a href="/workforceoptimization">WorkForce Optimization</a></li>
-                                <li><a href="/employeeappraisal">Employee Appraisals</a></li>
-                                <li><a href="/faq">Faq Page</a></li>
-    						</ul>
-					</li>
-
-                </ul>
-
+                    <li>
+                        <a href="/faq">
+                            FAQ
+                            <i class="fa fa-share"></i>
+                        </a>
+                    </li>
             </nav>
         </div>
 

@@ -100,8 +100,8 @@ var workforce = web.Route{"GET", "/workforceoptimization", func(w http.ResponseW
 	})
 }}
 
-var appraisal = web.Route{"GET", "/employeeapppraisal", func(w http.ResponseWriter, r *http.Request) {
-	tmpl.Render(w, r, "employeeappraisal.tmpl", web.Model{
+var appraisal = web.Route{"GET", "/appraisal", func(w http.ResponseWriter, r *http.Request) {
+	tmpl.Render(w, r, "appraisal.tmpl", web.Model{
 		"footerNews": getFooterNews(),
 	})
 
