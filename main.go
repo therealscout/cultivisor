@@ -31,7 +31,7 @@ func init() {
 }
 
 func main() {
-	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout)
+	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout, workforce, appraisal)
 	mux.AddSecureRoutes(ADMIN, inbox, news, newsView, addNews, addEmployee, calendar, msgView, delNews, delMsg, delEmployee, settings, employee, employeeView, question)
 	fmt.Println("------------------------------------------REMEMBER TO REGISTER ALL NEW ROUTES")
 	log.Fatal(http.ListenAndServe(":8888", mux))
@@ -92,6 +92,19 @@ var faq = web.Route{"GET", "/faq", func(w http.ResponseWriter, r *http.Request) 
 	tmpl.Render(w, r, "faq.tmpl", web.Model{
 		"footerNews": getFooterNews(),
 	})
+}}
+
+var workforce = web.Route{"GET", "/workforceoptimization", func(w http.ResponseWriter, r *http.Request) {
+	tmpl.Render(w, r, "workforceoptimization.tmpl", web.Model{
+		"footerNews": getFooterNews(),
+	})
+}}
+
+var appraisal = web.Route{"GET", "/employeeapppraisal", func(w http.ResponseWriter, r *http.Request) {
+	tmpl.Render(w, r, "employeeappraisal.tmpl", web.Model{
+		"footerNews": getFooterNews(),
+	})
+
 }}
 
 // -----------------END USER PAGES-------------------
