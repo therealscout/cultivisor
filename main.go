@@ -31,7 +31,7 @@ func init() {
 }
 
 func main() {
-	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout, workforce, appraisal)
+	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout, workforce, appraisal, servicemenue, publiccourse)
 	mux.AddSecureRoutes(ADMIN, inbox, news, newsView, addNews, addEmployee, calendar, msgView, delNews, delMsg, delEmployee, settings, employee, employeeView, question)
 	fmt.Println("------------------------------------------REMEMBER TO REGISTER ALL NEW ROUTES")
 	log.Fatal(http.ListenAndServe(":8888", mux))
@@ -102,6 +102,20 @@ var workforce = web.Route{"GET", "/workforceoptimization", func(w http.ResponseW
 
 var appraisal = web.Route{"GET", "/appraisal", func(w http.ResponseWriter, r *http.Request) {
 	tmpl.Render(w, r, "appraisal.tmpl", web.Model{
+		"footerNews": getFooterNews(),
+	})
+
+}}
+
+var servicemenue = web.Route{"GET", "/servicemenue", func(w http.ResponseWriter, r *http.Request) {
+	tmpl.Render(w, r, "servicemenue.tmpl", web.Model{
+		"footerNews": getFooterNews(),
+	})
+
+}}
+
+var publiccourse = web.Route{"GET", "/publiccourse", func(w http.ResponseWriter, r *http.Request) {
+	tmpl.Render(w, r, "publiccourse.tmpl", web.Model{
 		"footerNews": getFooterNews(),
 	})
 
