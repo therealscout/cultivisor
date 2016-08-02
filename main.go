@@ -31,7 +31,7 @@ func init() {
 }
 
 func main() {
-	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout, workforce, appraisal, servicemenue, publiccourse)
+	mux.AddRoutes(index, login, loginpage, send, perform, article, articleView, uploadServer, whatWeDo, terms, privacy, faq, logout, workforce, appraisal, servicemenue, publiccourse, team)
 	mux.AddSecureRoutes(ADMIN, inbox, news, newsView, addNews, addEmployee, calendar, msgView, delNews, delMsg, delEmployee, settings, employee, employeeView, question)
 	fmt.Println("------------------------------------------REMEMBER TO REGISTER ALL NEW ROUTES")
 	log.Fatal(http.ListenAndServe(":8888", mux))
@@ -117,6 +117,16 @@ var servicemenue = web.Route{"GET", "/servicemenue", func(w http.ResponseWriter,
 var publiccourse = web.Route{"GET", "/publiccourse", func(w http.ResponseWriter, r *http.Request) {
 	tmpl.Render(w, r, "publiccourse.tmpl", web.Model{
 		"footerNews": getFooterNews(),
+	})
+
+}}
+
+var team = web.Route{"GET", "/team", func(w http.ResponseWriter, r *http.Request) {
+	var employee []Employee
+	db.GetAll("employee", &employee)
+	tmpl.Render(w, r, "team.tmpl", web.Model{
+		"allEmployee": employee,
+		"footerNews":  getFooterNews(),
 	})
 
 }}

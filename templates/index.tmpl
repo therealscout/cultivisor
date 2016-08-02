@@ -54,12 +54,12 @@
 					data-effect="slide|fade|coverflow"
 					data-autoplay="2500|false"
 				-->
-				<div class="swiper-container" data-effect="slide" data-autoplay="7000">
+				<div class="swiper-container" data-effect="slide" data-autoplay="9000">
 					<div class="swiper-wrapper">
 
 						<!-- SLIDE 1 -->
 						<div class="swiper-slide" style="background-image: url('/static/images/demo/1200x800/20-min.jpg');">
-							<div class="overlay dark-2"><!-- dark overlay [1 to 9 opacity] --></div>
+							<div class="overlay dark-4"><!-- dark overlay [1 to 9 opacity] --></div>
 
 							<div class="display-table">
 								<div class="display-table-cell vertical-align-middle">
@@ -68,7 +68,7 @@
 										<div class="row">
 											<div class="text-center col-md-8 col-xs-12 col-md-offset-2">
 
-												<h1 class="bold font-raleway wow fadeInUp" data-wow-delay="0.4s">WELCOME TO CULTIVISOR</h1>
+												<h1 class="bold font-raleway wow fadeInUp" data-wow-delay="0.4s">WELCOME TO <span>CULTIVISOR</span></h1>
 												<p class="lead font-lato weight-300 hidden-xs wow fadeInDown" data-wow-delay="0.6s">Advice and Tools to Cultivate Employee Talent</p>
 												<a class="btn btn-xlg btn-default btn-bordered size-20 wow fadeIn" data-wow-delay="1.5s" href="#whatwedo">Learn More</a>
 											</div>
@@ -84,7 +84,7 @@
 
 						<!-- SLIDE 2 -->
 						<div class="swiper-slide" style="background-image: url('/static/images/demo/1200x800/18-min.jpg');">
-							<div class="overlay dark-2"><!-- dark overlay [1 to 9 opacity] --></div>
+							<div class="overlay dark-4"><!-- dark overlay [1 to 9 opacity] --></div>
 
 							<div class="display-table">
 								<div class="display-table-cell vertical-align-middle">
@@ -320,12 +320,12 @@
 								<p>And How To Cultivate Your Employees Talents!</p>
 							</div>
 
-							<div class="col-md-3 col-xs-12">
-								<a href="/workforceoptimization" rel="nofollow" class="btn btn-xlg btn-default btn-bordered size-16 wow fadeInRight" data-wow-delay=".3s">WorkForce Optimization</a>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<a href="/workforceoptimization" rel="nofollow" class="btn btn-md btn-default btn-bordered size-16 wow fadeInRight" data-wow-delay=".3s">WorkForce Optimization</a>
 							</div>
 
-							<div class="col-md-3 col-xs-12">
-								<a href="/appraisal" rel="nofollow" class="btn btn-xlg btn-default btn-bordered size-16 wow fadeInRight" data-wow-delay=".3s">Employee Appraisals</a>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<a href="/appraisal" rel="nofollow" class="btn btn-md btn-default btn-bordered size-16 wow fadeInRight" data-wow-delay=".3s">Employee Appraisals</a>
 							</div>
 
 						</div>
@@ -349,7 +349,7 @@
 						<div class="col-md-6">
 							<img class="img-responsive" src="/static/images/PerformLaptop.jpg" alt="" />
 							<div class="text-center">
-								<a href="/perform" class="wow rubberBand btn btn-lg btn-default btn-bordered size-20" data-wow-duration="1s">
+								<a href="/perform" class="btn btn-lg btn-default btn-bordered size-20" data-wow-duration="1s">
 									<span class="block font-lato">Learn More About <span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span></span>
 								</a>
 
@@ -541,7 +541,6 @@
 									<li>Historic employee data load: employee job history, training registration, etc. (all areas supported by <span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span>)</li>
 								</ul>
 								<hr />
-								<!-- <a href="#" class="btn btn-3d btn-primary">Learn More</a> -->
 							</div>
 
 						</div>
@@ -563,12 +562,13 @@
 							<p class="lead">Your success is our success.  It all comes down to your people!</p>
 							<hr />
 							<p class="visible-sm visible-xs">Swipe To View Oour Team!</p>
+							<a href="/team" class="btn btn-3d btn-primary hidden-sm hidden-xs">View Our Team</a>
 						</header>
 						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 5000, "navigation": true, "pagination": false}'>
 
 							{{ range $employee := .allEmployee}}
 								<div class="box-inner">
-									<div style="height:800px;">
+									<div style="height:700px;">
 										{{ if $employee.Image }}
 											<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
 										{{ end }}
@@ -599,113 +599,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div class="container">
-
-					<header class="text-center margin-bottom-60">
-						<h2>OUR TEAM</h2>
-						<p class="lead font-lato">We meet and get to know you. You tell us and we listen. </p>
-						<hr />
-					</header>
-					<div class="hidden-md hidden-sm hidden-xs">
-
-						<p class="pull-right">Hover For More Info</p>
-						<p class="lead">Your success is our success.  It all comes down to your people!</p>
-						<div class="row">
-						{{ range $employee := .allEmployee }}
-							<div class=" col-lg-3 col-md-3">
-								<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center margin-bottom-20">
-									<div class="front">
-										<div class="box1 box-default">
-											<span class="box-icon-title">
-												{{ if $employee.Image }}
-												<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
-												{{ end }}
-												<h2>{{ $employee.FirstName }} {{ $employee.LastName }}</h2>
-												<small>/ {{ $employee.Location }}</small>
-											</span>
-										</div>
-									</div>
-
-									<div class="back">
-										<div class="box2 box-default">
-											<div style="height:280px;">
-
-												<h4 class="nomargin">{{ $employee.FirstName }} {{ $employee.LastName }}</h4>
-												<small>/ {{ $employee.Title }}</small>
-
-												<hr/>
-												<p class="size-11">{{ $employee.Description }}</p>
-
-											</div>
-											<hr/>
-											<a href="https://www.facebook.com" class="social-icon social-icon-sm social-facebook">
-												<i class="fa fa-facebook"></i>
-												<i class="fa fa-facebook"></i>
-											</a>
-											<a href="https://www.twitter.com" class="social-icon social-icon-sm social-twitter">
-												<i class="fa fa-twitter"></i>
-												<i class="fa fa-twitter"></i>
-											</a>
-											<a href="https://www.linkedin.com" class="social-icon social-icon-sm social-linkedin">
-												<i class="fa fa-linkedin"></i>
-												<i class="fa fa-linkedin"></i>
-											</a>
-											<hr/>
-
-										</div>
-									</div>
-								</div>
-							</div>
-							{{ end }}
-						</div>
-
-					</div>
-
-					<div class="hidden-lg">
-
-						<p class="lead">Your success is our success.  It all comes down to your people!</p>
-						<div class="row">
-						{{ range $employee := .allEmployee }}
-							<div class=" col-md-6 col-sm-12 col-xs-12">
-								<div class="box-flip box-color box-icon box-icon-center box-icon-round box-icon-large text-center margin-bottom-20">
-									<div class="box1 box-default">
-
-										<span class="box-icon-title">
-											{{ if $employee.Image }}
-											<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
-											{{ end }}
-											<h2 class="size-30">{{ $employee.FirstName }} {{ $employee.LastName }}</h2>
-											<h2 class="size-20">/ {{ $employee.Title }}</h2>
-											<hr/>
-										</span>
-										<p class="size-17">{{ $employee.Description }}</p>
-
-										<hr/>
-
-										<a href="https://www.facebook.com" class="social-icon social-icon-sm social-facebook">
-											<i class="fa fa-facebook"></i>
-											<i class="fa fa-facebook"></i>
-										</a>
-										<a href="https://www.twitter.com" class="social-icon social-icon-sm social-twitter">
-											<i class="fa fa-twitter"></i>
-											<i class="fa fa-twitter"></i>
-										</a>
-										<a href="https://www.linkedin.com" class="social-icon social-icon-sm social-linkedin">
-											<i class="fa fa-linkedin"></i>
-											<i class="fa fa-linkedin"></i>
-										</a>
-
-										<hr/>
-									</div>
-
-								</div>
-							</div>
-							{{ end }}
-						</div>
-
-					</div>
-
-				</div> -->
 
 			</section>
 
@@ -716,7 +609,7 @@
 
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12 col-xs-12 text-center">
+						<div class="col-lg-12 col-md-12 text-center">
 							<h3 class="nomargin">WORKFORCE  OPTIMIZATION</h3>
 							<p class="font-lato weight-300 lead nomargin-top">Cultivisor's Founders literally wrote the book on managing a company's workforce from a holistic perspective - tied directly to employee actual job performance as the driving force.</p>
 						</div>
@@ -724,10 +617,10 @@
 					<br>
 					<br>
 					<div class="row">
-						<div class="col-md-3 col-md-offset-3 col-xs-6 col-xs-offset-3">
+						<div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-6 col-sm-offset-2">
 							<img class="img-responsive" style="width:200px" src="/static/images/book.jpg" alt="" />
 						</div>
-						<div class="col-md-3 col-md-offset-0 col-xs-12 col-xs-offset-2 margin-top-150">
+						<div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-offset-2 margin-top-150">
 							<a href="/static/Workforce_Optimization.pdf" target="_blank" class="btn btn-lg btn-default btn-bordered size-20 wow bounce" data-wow-delay=".5s">
 								Snag A Free Copy!
 							</a>
@@ -787,7 +680,7 @@
 					<div class="row">
 
 						<!-- FORM -->
-						<div class="col-md-8 col-sm-8">
+						<div class="col-md-12 col-sm-12">
 
 							<h4>We’d love to hear from you. If you have any feedback, comments or just want to ask a few questions, don't hesitate to send us a message. A Cultivisor representative will be in contact with you within a business day.</h4>
 
@@ -845,11 +738,11 @@
 
 
 						<!-- INFO -->
-						<div class="col-md-4 col-sm-4">
+						<!-- <div class="col-md-4 col-sm-4">
 
 							<h2>Visit Us</h2>
 
-							<!--
+
 							Available heights
 								height-100
 								height-150
@@ -862,7 +755,7 @@
 								height-500
 								height-550
 								height-600
-							-->
+
 							<div id="map2" class="height-400"></div>
 
 							<hr />
@@ -873,7 +766,7 @@
 								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:ken.johnson@cultivisor.com">ken.johnson@cultivisor.com</a></span>
 							</p>
 
-						</div>
+						</div> -->
 						<!-- /INFO -->
 
 					</div>
@@ -921,25 +814,25 @@
 		<script type="text/javascript" src="/static/plugins/gmaps.js"></script>
 		<script type="text/javascript">
 
-			jQuery(document).ready(function(){
-
-				/**
-					@BASIC GOOGLE MAP
-				**/
-				var map2 = new GMaps({
-					div: '#map2',
-					lat: 40.1475297,
-					lng: -76.2416176,
-					scrollwheel: false
-				});
-
-				var marker = map2.addMarker({
-					lat: 40.1475297,
-					lng: -76.2394236,
-					title: 'Company, Inc.'
-				});
-
-			});
+			// jQuery(document).ready(function(){
+			//
+			// 	/**
+			// 		@BASIC GOOGLE MAP
+			// 	**/
+			// 	var map2 = new GMaps({
+			// 		div: '#map2',
+			// 		lat: 40.1475297,
+			// 		lng: -76.2416176,
+			// 		scrollwheel: false
+			// 	});
+			//
+			// 	var marker = map2.addMarker({
+			// 		lat: 40.1475297,
+			// 		lng: -76.2394236,
+			// 		title: 'Company, Inc.'
+			// 	});
+			//
+			// });
 
 		</script>
 
