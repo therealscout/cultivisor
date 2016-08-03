@@ -62,21 +62,37 @@
 
 							<div class="row">
 								<div class="form-group">
-									<div class="col-md-3 col-sm-3">
+									<div class="col-md-3 col-sm-2">
 										<label>First Name *</label>
 										<input type="text" name="firstname" value="{{ .employee.FirstName }}" class="form-control required">
 									</div>
-									<div class="col-md-3 col-sm-3">
+									<div class="col-md-3 col-sm-2">
 										<label>Last Name *</label>
 										<input type="text" name="lastname" value="{{ .employee.LastName }}" class="form-control required">
+									</div>
+									<div class="col-md-3 col-sm-2">
+										<label>Email *</label>
+										<input required type="email" name="email" value="{{ .employee.Email }}" class="form-control required">
 									</div>
 									<div class="col-md-3 col-sm-3">
 										<label>Title *</label>
 										<input type="text" name="title" value="{{ .employee.Title }}" class="form-control required">
 									</div>
-									<div class="col-md-3 col-sm-3">
+									<div class="col-md-3 col-sm-3 margin-top-20">
 										<label>Location *</label>
 										<input type="text" name="location" value="{{ .employee.Location }}" placeholder="City, State, Country" class="form-control required">
+									</div>
+									<div class="col-md-3 col-sm-3 margin-top-20">
+										<label>Facebook</label>
+										<input type="text" name="facebook" value="{{ .employee.Facebook }}" placeholder="Facebook" class="form-control">
+									</div>
+									<div class="col-md-3 col-sm-3 margin-top-20">
+										<label>Twitter</label>
+										<input type="text" name="twitter" value="{{ .employee.Twitter }}" placeholder="Twitter" class="form-control">
+									</div>
+									<div class="col-md-3 col-sm-3 margin-top-20">
+										<label>Linkedin</label>
+										<input type="text" name="linkedin" value="{{ .employee.Linkedin }}" placeholder="Linkedin" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -100,6 +116,14 @@
 											<a href="/employee" class="btn btn-3d btn-warning btn-md margin-right-10 margin-top-30">Cancel</a>
 											<a id="delButton" class="btn btn-3d btn-danger btn-md margin-right-10 margin-top-30">Delete</a>
 										</div>
+										<div class="text-right margin-top-20">
+											<label class="switch switch-danger switch-round">
+												<span> Display on Main Page? &nbsp;&nbsp;</span>
+												<input type="checkbox" name="mainPage" value="true" {{ if .employee.MainPage }}checked="true"{{ end }}>
+												<span class="switch-label" data-on="YES" data-off="NO"></span>
+											</label>
+
+										</div>
 									</div>
 								</div>
 								{{ if .employee.Image }}
@@ -111,9 +135,6 @@
 
 						</fieldset>
 
-						<div class="row">
-
-						</div>
 						{{ if .employee.Id }}
 							<input type="hidden" name="id" value="{{ .employee.Id }}">
 						{{ end }}

@@ -40,14 +40,20 @@ func main() {
 // -----------------USER PAGES-------------------
 
 var index = web.Route{"GET", "/", func(w http.ResponseWriter, r *http.Request) {
-	var employee []Employee
-	db.GetAll("employee", &employee)
+	var es []Employee
+	db.GetAll("employee", &es)
+	var employees []Employee
+	for _, e := range es {
+		if e.MainPage {
+			employees = append(employees, e)
+		}
+	}
 	var news NewsSorted
 	db.GetAll("news", &news)
 	sort.Stable(news)
 	tmpl.Render(w, r, "index.tmpl", web.Model{
 		"allNews":     news,
-		"allEmployee": employee,
+		"allEmployee": employees,
 		"footerNews":  getFooterNews(),
 	})
 }}
@@ -382,7 +388,16 @@ var addEmployee = web.Route{"POST", "/employee", func(w http.ResponseWriter, r *
 	employee.Title = r.FormValue("title")
 	employee.Description = r.FormValue("description")
 	employee.Location = r.FormValue("location")
+	employee.Email = r.FormValue("email")
+	employee.Facebook = r.FormValue("facebook")
+	employee.Twitter = r.FormValue("twitter")
+	employee.Linkedin = r.FormValue("linkedin")
 
+	if r.FormValue("mainPage") == "true" {
+		employee.MainPage = true
+	} else {
+		employee.MainPage = false
+	}
 	r.ParseMultipartForm(32 << 20)
 	file, handler, err := r.FormFile("image")
 	if err == nil {

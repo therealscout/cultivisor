@@ -436,7 +436,7 @@
 						</div>
 						<div class="col-md-4 col-xs-12">
 							<div class="text-center">
-								<i class="ico-color ico-lg ico-rounded ico-hover et-strategy"></i>
+								<i class="ico-color ico-lg ico-rounded ico-hover fa fa-sliders"></i>
 								<h4>EASE OF USE</h4>
 								<p class="font-lato size-20">Capture and share best practices</p>
 								<p class="font-lato size-20">Record or copy/paste actual job performance measurements</p>
@@ -564,8 +564,7 @@
 							<p class="visible-sm visible-xs">Swipe To View Oour Team!</p>
 							<a href="/team" class="btn btn-3d btn-primary hidden-sm hidden-xs">View Our Team</a>
 						</header>
-						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 5000, "navigation": true, "pagination": false}'>
-
+						<!-- <div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 5000, "navigation": true, "pagination": false}'>
 							{{ range $employee := .allEmployee}}
 								<div class="box-inner">
 									<div style="height:700px;">
@@ -576,7 +575,7 @@
 										<h1>{{ $employee.Title }}</h1>
 										<p class="text-left size-13">{{ $employee.Description}}</p>
 									</div>
-									<ul class="text-left size-12 list-inline list-separator nomargin nopadding">
+									<ul class="text-left size-15 list-inline list-separator nomargin nopadding">
 										<li>Based In {{ $employee.Location }}</li>
 
 									</ul>
@@ -590,6 +589,39 @@
 										<i class="fa fa-twitter"></i>
 									</a>
 									<a href="https://www.linkedin.com" class="social-icon social-icon-sm social-linkedin">
+										<i class="fa fa-linkedin"></i>
+										<i class="fa fa-linkedin"></i>
+									</a>
+									<hr/>
+								</div>
+							{{ end }}
+						</div> -->
+						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 5000, "navigation": true, "pagination": false}'>
+							{{ range $employee := .allEmployee}}
+								<div class="box-inner">
+									<div style="height:520px;">
+										{{ if $employee.Image }}
+											<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
+										{{ end }}
+										<h1 class="text-center size-20 margin-top-20">{{ $employee.FirstName }} {{ $employee.LastName }}</h1>
+										<h1>{{ $employee.Title }}</h1>
+									</div>
+									<ul class="text-left size-15 list-inline list-separator nomargin nopadding">
+										<br>
+										<li>Based In {{ $employee.Location }}</li>
+										<br>
+										<li>Email <a href="mailto:{{ $employee.Email }}">{{ $employee.Email }}</a></li>
+									</ul>
+									<hr/>
+									<a href="https://www.facebook.com/{{ $employee.Facebook }}" class="social-icon social-icon-sm social-facebook">
+										<i class="fa fa-facebook"></i>
+										<i class="fa fa-facebook"></i>
+									</a>
+									<a href="https://www.twitter.com/{{ $employee.Twitter }}" class="social-icon social-icon-sm social-twitter">
+										<i class="fa fa-twitter"></i>
+										<i class="fa fa-twitter"></i>
+									</a>
+									<a href="https://www.linkedin.com/{{ $employee.Linkedin }}" class="social-icon social-icon-sm social-linkedin">
 										<i class="fa fa-linkedin"></i>
 										<i class="fa fa-linkedin"></i>
 									</a>

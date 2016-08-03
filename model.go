@@ -29,6 +29,11 @@ type Employee struct {
 	Title       string
 	Image       bool
 	Location    string
+	Email       string
+	MainPage    bool
+	Facebook    string
+	Twitter     string
+	Linkedin    string
 }
 
 type NewsSorted []News
