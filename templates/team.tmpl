@@ -71,6 +71,8 @@
     												{{ end }}
     												<h2>{{ $employee.FirstName }} {{ $employee.LastName }}</h2>
     												<small>/ {{ $employee.Location }}</small>
+													<p>Email: {{ $employee.Email }}</p>
+
     											</span>
     										</div>
     									</div>
@@ -87,18 +89,24 @@
 
     											</div>
     											<hr/>
-    											<a href="https://www.facebook.com" class="social-icon social-icon-sm social-facebook">
-    												<i class="fa fa-facebook"></i>
-    												<i class="fa fa-facebook"></i>
-    											</a>
-    											<a href="https://www.twitter.com" class="social-icon social-icon-sm social-twitter">
-    												<i class="fa fa-twitter"></i>
-    												<i class="fa fa-twitter"></i>
-    											</a>
-    											<a href="https://www.linkedin.com" class="social-icon social-icon-sm social-linkedin">
-    												<i class="fa fa-linkedin"></i>
-    												<i class="fa fa-linkedin"></i>
-    											</a>
+												{{ if $employee.Facebook }}
+												<a href="https://www.facebook.com/{{ $employee.Facebook }}" class="social-icon social-icon-sm social-facebook">
+													<i class="fa fa-facebook"></i>
+													<i class="fa fa-facebook"></i>
+												</a>
+												{{ end }}
+												{{ if $employee.Twitter }}
+												<a href="https://www.twitter.com/{{ $employee.Twitter }}" class="social-icon social-icon-sm social-twitter">
+													<i class="fa fa-twitter"></i>
+													<i class="fa fa-twitter"></i>
+												</a>
+												{{ end }}
+												{{ if $employee.Linkedin }}
+												<a href="https://www.linkedin.com/{{ $employee.Linkedin }}" class="social-icon social-icon-sm social-linkedin">
+													<i class="fa fa-linkedin"></i>
+													<i class="fa fa-linkedin"></i>
+												</a>
+												{{ end }}
     											<hr/>
 
     										</div>

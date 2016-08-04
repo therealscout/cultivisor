@@ -27,6 +27,7 @@
 		<!-- THEME CSS -->
 		<link href="/static/css/essentials.css" rel="stylesheet" type="text/css" />
 		<link href="/static/css/layout.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="/static/css/plugin-hover-buttons.css" type="text/css">
 
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="/static/css/header-1.css" rel="stylesheet" type="text/css" />
@@ -233,33 +234,33 @@
 							<h1>Our Commitment</h1>
 						</div>
 
-						<div class="wow fadeInUp col-lg-3 col-md-6" data-wow-delay=".2s">
+						<div class="col-lg-3 col-md-6">
 							<div class="piechart" data-color="#8ab933" data-trackcolor="rgba(0,0,0,0.04)" data-size="150" data-percent="100" data-width="2">
-								<span>The Success</span>
+								<span class="wow fadeInUp" data-wow-delay=".2s">The Success</span>
 							</div>
 							<p>
 								<strong>We know</strong> that your success will lead to our success. Our goal is not to make you dependent on us, but to work together in alliance.
 							</p>
 						</div>
-						<div class="wow fadeInUp col-lg-3 col-md-6" data-wow-delay=".2s">
+						<div class="col-lg-3 col-md-6">
 							<div class="piechart" data-color="#8ab933" data-trackcolor="rgba(0,0,0,0.08)" data-size="150" data-percent="100" data-width="2">
-								<span>The Advantage</span>
+								<span class="wow fadeInUp" data-wow-delay=".3s">The Advantage</span>
 							</div>
 							<p>
 								<strong>We seek</strong> to ensure that the strategic advantage which a well-led workforce offers is recognized and valued within the business community.
 							</p>
 						</div>
-						<div class="wow fadeInUp col-lg-3 col-md-6" data-wow-delay=".2s">
+						<div class="col-lg-3 col-md-6">
 							<div class="piechart" data-color="#8ab933" data-trackcolor="rgba(0,0,0,0.08)" data-size="150" data-percent="100" data-width="2">
-								<span>The Science</span>
+								<span class="wow fadeInUp" data-wow-delay=".4s">The Science</span>
 							</div>
 							<p>
 								<strong>We believe</strong> that effectively harnessing employee potential is more of a science, and not just an art. As such, we will strive to continue to create tools to help business professionals evaluate performance and elevate Talent Development initiatives.
 							</p>
 						</div>
-						<div class="wow fadeInUp col-lg-3 col-md-6" data-wow-delay=".2s">
+						<div class="col-lg-3 col-md-6">
 							<div class="piechart" data-color="#8ab933" data-trackcolor="rgba(0,0,0,0.08)" data-size="150" data-percent="100" data-width="2">
-								<span>The Result</span>
+								<span class="wow fadeInUp" data-wow-delay=".5s">The Result</span>
 							</div>
 							<p>
 								<strong>We are</strong> committed to help our customers to help their organizations achieve greater results through better methods of employee engagement.
@@ -321,11 +322,11 @@
 							</div>
 
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<a href="/workforceoptimization" rel="nofollow" class="btn btn-md btn-default btn-bordered size-16 wow fadeInRight" data-wow-delay=".3s">WorkForce Optimization</a>
+								<a href="/workforceoptimization" rel="nofollow" class="btn btn-md btn-default btn-bordered size-16">WorkForce Optimization</a>
 							</div>
 
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<a href="/appraisal" rel="nofollow" class="btn btn-md btn-default btn-bordered size-16 wow fadeInRight" data-wow-delay=".3s">Employee Appraisals</a>
+								<a href="/appraisal" rel="nofollow" class="btn btn-md btn-default btn-bordered size-16">Employee Appraisals</a>
 							</div>
 
 						</div>
@@ -349,10 +350,7 @@
 						<div class="col-md-6">
 							<img class="img-responsive" src="/static/images/PerformLaptop.jpg" alt="" />
 							<div class="text-center">
-								<a href="/perform" class="btn btn-lg btn-default btn-bordered size-20" data-wow-duration="1s">
-									<span class="block font-lato">Learn More About <span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span></span>
-								</a>
-
+								<a href="/perform" class="btn btn-lg btn-hvr hvr-bounce-to-top">Learn More About <span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span></a>
 							</div>
 
 						</div>
@@ -553,7 +551,7 @@
 
 			<!-- TEAM -->
 
-			<section id="ourteam" class="alternate nopadding nomargin">
+			<section id="ourteam" class="hidden-sm hidden-xs alternate nopadding nomargin">
 				<div class="box-light padding-top-60 padding-bottom-40">
 					<div class="container">
 						<header class="text-center margin-bottom-60">
@@ -561,45 +559,13 @@
 							<p class="lead font-lato">We meet and get to know you. You tell us and we listen.</p>
 							<p class="lead">Your success is our success.  It all comes down to your people!</p>
 							<hr />
-							<p class="visible-sm visible-xs">Swipe To View Oour Team!</p>
-							<a href="/team" class="btn btn-3d btn-primary hidden-sm hidden-xs">View Our Team</a>
+							<p class="visible-sm visible-xs">Swipe To View Our Team!</p>
+							<a href="/team" class="btn btn-lg btn-hvr hvr-bounce-to-bottom hidden-sm hidden-xs">View Our Team</a>
 						</header>
-						<!-- <div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 5000, "navigation": true, "pagination": false}'>
+						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 8000, "navigation": true, "pagination": false}'>
 							{{ range $employee := .allEmployee}}
 								<div class="box-inner">
-									<div style="height:700px;">
-										{{ if $employee.Image }}
-											<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
-										{{ end }}
-										<h1 class="text-center size-20 margin-top-20"><a href="/article/{{ $employee.Id }}">{{ $employee.FirstName }} {{ $employee.LastName }}</a></h1>
-										<h1>{{ $employee.Title }}</h1>
-										<p class="text-left size-13">{{ $employee.Description}}</p>
-									</div>
-									<ul class="text-left size-15 list-inline list-separator nomargin nopadding">
-										<li>Based In {{ $employee.Location }}</li>
-
-									</ul>
-									<hr/>
-									<a href="https://www.facebook.com" class="social-icon social-icon-sm social-facebook">
-										<i class="fa fa-facebook"></i>
-										<i class="fa fa-facebook"></i>
-									</a>
-									<a href="https://www.twitter.com" class="social-icon social-icon-sm social-twitter">
-										<i class="fa fa-twitter"></i>
-										<i class="fa fa-twitter"></i>
-									</a>
-									<a href="https://www.linkedin.com" class="social-icon social-icon-sm social-linkedin">
-										<i class="fa fa-linkedin"></i>
-										<i class="fa fa-linkedin"></i>
-									</a>
-									<hr/>
-								</div>
-							{{ end }}
-						</div> -->
-						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 5000, "navigation": true, "pagination": false}'>
-							{{ range $employee := .allEmployee}}
-								<div class="box-inner">
-									<div style="height:520px;">
+									<div style="height:550px;">
 										{{ if $employee.Image }}
 											<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
 										{{ end }}
@@ -613,18 +579,79 @@
 										<li>Email <a href="mailto:{{ $employee.Email }}">{{ $employee.Email }}</a></li>
 									</ul>
 									<hr/>
+									{{ if $employee.Facebook }}
 									<a href="https://www.facebook.com/{{ $employee.Facebook }}" class="social-icon social-icon-sm social-facebook">
 										<i class="fa fa-facebook"></i>
 										<i class="fa fa-facebook"></i>
 									</a>
+									{{ end }}
+									{{ if $employee.Twitter }}
 									<a href="https://www.twitter.com/{{ $employee.Twitter }}" class="social-icon social-icon-sm social-twitter">
 										<i class="fa fa-twitter"></i>
 										<i class="fa fa-twitter"></i>
 									</a>
+									{{ end }}
+									{{ if $employee.Linkedin }}
 									<a href="https://www.linkedin.com/{{ $employee.Linkedin }}" class="social-icon social-icon-sm social-linkedin">
 										<i class="fa fa-linkedin"></i>
 										<i class="fa fa-linkedin"></i>
 									</a>
+									{{ end }}
+									<hr/>
+								</div>
+							{{ end }}
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+			<section id="ourteam" class="hidden-lg hidden-md alternate nopadding nomargin">
+				<div class="box-light padding-top-60 padding-bottom-40">
+					<div class="container">
+						<header class="text-center margin-bottom-60">
+							<h2>OUR TEAM</h2>
+							<p class="lead font-lato">We meet and get to know you. You tell us and we listen.</p>
+							<p class="lead">Your success is our success.  It all comes down to your people!</p>
+							<hr />
+							<p class="visible-sm visible-xs">Swipe To View Our Team!</p>
+							<a href="/team" class="btn btn-lg btn-hvr hvr-bounce-to-bottom hidden-sm hidden-xs">View Our Team</a>
+						</header>
+						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 8000, "navigation": true, "pagination": false}'>
+							{{ range $employee := .allEmployee}}
+								<div class="box-inner">
+									<div style="height:450px;">
+										{{ if $employee.Image }}
+											<img class="img-responsive" src="/upload/employee/{{ $employee.Id }}.png" alt="">
+										{{ end }}
+										<h1 class="text-center size-20 margin-top-20">{{ $employee.FirstName }} {{ $employee.LastName }}</h1>
+										<h1>{{ $employee.Title }}</h1>
+									</div>
+									<ul class="text-left size-15 list-inline list-separator nomargin nopadding">
+										<br>
+										<li>Based In {{ $employee.Location }}</li>
+										<br>
+										<li>Email <a href="mailto:{{ $employee.Email }}">{{ $employee.Email }}</a></li>
+									</ul>
+									<hr/>
+									{{ if $employee.Facebook }}
+									<a href="https://www.facebook.com/{{ $employee.Facebook }}" class="social-icon social-icon-sm social-facebook">
+										<i class="fa fa-facebook"></i>
+										<i class="fa fa-facebook"></i>
+									</a>
+									{{ end }}
+									{{ if $employee.Twitter }}
+									<a href="https://www.twitter.com/{{ $employee.Twitter }}" class="social-icon social-icon-sm social-twitter">
+										<i class="fa fa-twitter"></i>
+										<i class="fa fa-twitter"></i>
+									</a>
+									{{ end }}
+									{{ if $employee.Linkedin }}
+									<a href="https://www.linkedin.com/{{ $employee.Linkedin }}" class="social-icon social-icon-sm social-linkedin">
+										<i class="fa fa-linkedin"></i>
+										<i class="fa fa-linkedin"></i>
+									</a>
+									{{ end }}
 									<hr/>
 								</div>
 							{{ end }}
@@ -636,25 +663,25 @@
 
 			<!-- /TEAM -->
 			<!-- PARALLAX -->
-			<section class="parallax parallax-2 hidden-xs" style="background-image: url('/static/images/demo/1200x800/12-min.jpg');">
+			<section class="parallax parallax-2 hidden-sm hidden-xs" style="background-image: url('/static/images/demo/1200x800/12-min.jpg');">
 				<div class="overlay dark-8"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 text-center">
-							<h3 class="nomargin">WORKFORCE  OPTIMIZATION</h3>
+							<h3 class="nomargin">WORKFORCE  <span>OPTIMIZATION</span></h3>
 							<p class="font-lato weight-300 lead nomargin-top">Cultivisor's Founders literally wrote the book on managing a company's workforce from a holistic perspective - tied directly to employee actual job performance as the driving force.</p>
 						</div>
 					</div>
 					<br>
 					<br>
 					<div class="row">
-						<div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-6 col-sm-offset-2">
+						<div class="col-lg-offset-3 col-lg-4 col-md-offset-3 col-md-4">
 							<img class="img-responsive" style="width:200px" src="/static/images/book.jpg" alt="" />
 						</div>
-						<div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-offset-2 margin-top-150">
+						<div class="col-lg-5 col-lg-offset-0 col-md-5 col-md-offset-0 margin-top-150">
 							<a href="/static/Workforce_Optimization.pdf" target="_blank" class="btn btn-lg btn-default btn-bordered size-20 wow bounce" data-wow-delay=".5s">
-								Snag A Free Copy!
+								Snag A <strong>Free</strong> Copy!
 							</a>
 						</div>
 					</div>
@@ -712,7 +739,7 @@
 					<div class="row">
 
 						<!-- FORM -->
-						<div class="col-md-12 col-sm-12">
+						<div class="col-lg-12 col-sm-12">
 
 							<h4>We’d love to hear from you. If you have any feedback, comments or just want to ask a few questions, don't hesitate to send us a message. A Cultivisor representative will be in contact with you within a business day.</h4>
 
