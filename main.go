@@ -52,6 +52,7 @@ var index = web.Route{"GET", "/", func(w http.ResponseWriter, r *http.Request) {
 	db.GetAll("news", &news)
 	sort.Stable(news)
 	tmpl.Render(w, r, "index.tmpl", web.Model{
+		// "alertSuccess": "Try Out Perform Now!",
 		"allNews":     news,
 		"allEmployee": employees,
 		"footerNews":  getFooterNews(),
