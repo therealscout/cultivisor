@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<title>Cultivisor {{ .news.Title }}</title>
@@ -11,9 +9,7 @@
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
-		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
@@ -36,13 +32,12 @@
                 {{ template "navbar2.tmpl" . }}
 
 			</div>
-			<!-- -->
+
 			<section>
 				<div class="container">
 
 					<div class="row">
 
-						<!-- LEFT -->
 						<div class="col-md-9 col-sm-9">
 
 							<h1 class="blog-post-title">{{ .news.Title }}</h1>
@@ -61,17 +56,13 @@
 								</li>
 							</ul>
 
-							<!-- OWL SLIDER -->
 							<div class="margin-bottom-20">
                                 <img class="img-responsive" src="/upload/news/{{ .news.Id }}.png" alt="">
 							</div>
 
-							<!-- article content -->
 							<p class="dropcap">{{ .news.Body }}</p>
 
-
-							<div class="divider"><!-- divider --></div>
-
+							<div class="divider"></div>
 
 							<ul class="pager">
 
@@ -80,39 +71,30 @@
 
 							</ul>
 
-
-							<div class="divider"><!-- divider --></div>
+							<div class="divider"></div>
 
 						</div>
 
-						<!-- RIGHT -->
 						<div class="col-md-3 col-sm-3">
 							<div class="side-nav margin-bottom-60 margin-top-30">
 
-
 							</div>
 
-
-							<!-- JUSTIFIED TAB -->
 							<div class="tabs nomargin-top hidden-xs margin-bottom-60">
 
-								<!-- tabs -->
 								<ul class="nav nav-tabs nav-bottom-border nav-justified">
 									<li class="active">
 										<a href="#tab_1" data-toggle="tab">
 											News
 										</a>
 									</li>
-
 								</ul>
 
-								<!-- tabs content -->
 								<div class="tab-content margin-bottom-60 margin-top-30">
 
-									<!-- POPULAR -->
 									<div id="tab_1" class="tab-pane active">
-                                        {{ range $news := .allNews }}
-										<div class="row tab-post"><!-- post -->
+	                                    {{ range $news := .allNews }}
+										<div class="row tab-post">
 											<div class="col-md-3 col-sm-3 col-xs-3">
 												<a href="blog-sidebar-left.html">
 													<img src="/upload/news/{{ $news.Id }}.png" width="50" alt="" />
@@ -122,38 +104,33 @@
 												<a href="/article/{{ $news.Id }}" class="tab-post-link">{{ $news.Title }}</a>
 												<small>{{ prettyDate $news.Id }}</small>
 											</div>
-										</div><!-- /post -->
-                                        {{ end }}
-
+										</div>
+	                                    {{ end }}
 									</div>
-									<!-- /POPULAR -->
+								</div>
 
+								<div class="hidden-xs margin-top-30 margin-bottom-60">
+									<a href="https://www.facebook.com/cultivisor" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
 
+									<a href="https://www.twitter.com/cultivisor" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
+										<i class="icon-twitter"></i>
+										<i class="icon-twitter"></i>
+									</a>
 
+									<a href="https://www.youtube.com/cultivisor" class="social-icon social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Youtube">
+										<i class="icon-youtube"></i>
+										<i class="icon-youtube"></i>
+									</a>
 
-							</div>
-							<!-- JUSTIFIED TAB -->
-							<!-- SOCIAL ICONS -->
-							<div class="hidden-xs margin-top-30 margin-bottom-60">
-								<a href="https://www.facebook.com/cultivisor" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
-									<i class="icon-facebook"></i>
-									<i class="icon-facebook"></i>
-								</a>
+									<a href="https://www.linkedin.com/cultivisor" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
+										<i class="icon-linkedin"></i>
+										<i class="icon-linkedin"></i>
+									</a>
 
-								<a href="https://www.twitter.com/cultivisor" class="social-icon social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
-									<i class="icon-twitter"></i>
-									<i class="icon-twitter"></i>
-								</a>
-
-								<a href="https://www.youtube.com/cultivisor" class="social-icon social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Youtube">
-									<i class="icon-youtube"></i>
-									<i class="icon-youtube"></i>
-								</a>
-
-								<a href="https://www.linkedin.com/cultivisor" class="social-icon social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
-									<i class="icon-linkedin"></i>
-									<i class="icon-linkedin"></i>
-								</a>
+								</div>
 
 							</div>
 
@@ -161,34 +138,21 @@
 
 					</div>
 
-
 				</div>
 			</section>
-			<!-- / -->
 
-			<!-- FOOTER -->
-			<footer id="footer">
-				{{ template "footer2.tmpl" . }}
-			</footer>
-			<!-- /FOOTER -->
+			{{ template "footer2.tmpl" . }}
 
-		</div>
-		<!-- /wrapper -->
-
-
-		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
-
-		<!-- PRELOADER -->
 		<div id="preloader">
 			<div class="inner">
 				<span class="loader"></span>
 			</div>
-		</div><!-- /PRELOADER -->
+		</div>
 
 		{{ template "scripts.tmpl" . }}
 		{{ template "alert.tmpl" . }}
-		
+
 	</body>
 </html>

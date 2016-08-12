@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<title>Cultivisor Admin</title>
@@ -11,9 +9,7 @@
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
-		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
@@ -34,30 +30,15 @@
 
 	<body class="smoothscroll enable-animation">
 
-		<!-- wrapper -->
 		<div id="wrapper">
 
-
-			<!--
-				SLIDER
-
-				Classes:
-					.fullheight = full height slider
-			-->
 			<section id="slider" class="fullheight">
 
-				<!--
-					SWIPPER SLIDER PARAMS
-
-					data-effect="slide|fade|coverflow"
-					data-autoplay="2500|false" 						(remove to disable autoplay)
-				-->
 				<div class="swiper-container" data-effect="fade" data-autoplay="false">
 					<div class="swiper-wrapper">
 
-						<!-- SLIDE 1 -->
 						<div class="swiper-slide">
-							<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+							<div class="overlay dark-5"></div>
 
 							<div class="slider-video">
 								<video poster="/static/images/demo/video/back.jpg" preload="auto" loop autoplay muted>
@@ -85,12 +66,9 @@
 							</div>
 
 						</div>
-						<!-- /SLIDE 1 -->
 
-
-						<!-- SLIDE 2 -->
 						<div class="swiper-slide" style="background-image: url('/static/images/demo/1200x800/18-min.jpg');">
-							<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+							<div class="overlay dark-5"></div>
 
 							<div class="display-table">
 								<div class="display-table-cell vertical-align-middle">
@@ -111,34 +89,16 @@
 							</div>
 
 						</div>
-						<!-- /SLIDE 2 -->
 
 					</div>
 
-					<!-- Swiper Pagination -->
 					<div class="swiper-pagination"></div>
 
-					<!-- Swiper Arrows -->
 					<div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
 					<div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>
 				</div>
 
 			</section>
-			<!-- /SLIDER -->
-
-
-
-			<!--
-
-			FULLWIDTH: OUTSIDE OF <section>
-
-				Available Classes:
-				alert-default
-				alert-info
-				alert-warning
-				alert-danger
-				alert-success
-			-->
 
 			<div class="callout alert alert-default noborder noradius">
 
@@ -155,24 +115,16 @@
 
 			</div>
 
-
-
-
-
-			<!-- FOOTER -->
 			<footer id="footer">
 				<div class="container">
 
 					<div class="row">
 
 						<div class="col-md-3">
-							<!-- Footer Logo -->
 							<img class="footer-logo" src="/static/images/logo-footer.png" alt="" />
 
-							<!-- Small Description -->
 							<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 
-							<!-- Contact Address -->
 							<address>
 								<ul class="list-unstyled">
 									<li class="footer-sprite address">
@@ -188,13 +140,11 @@
 									</li>
 								</ul>
 							</address>
-							<!-- /Contact Address -->
 
 						</div>
 
 						<div class="col-md-3">
 
-							<!-- Latest Blog Post -->
 							<h4 class="letter-spacing-1">LATEST NEWS</h4>
 							<ul class="footer-posts list-unstyled">
 								<li>
@@ -210,13 +160,11 @@
 									<small>29 June 2015</small>
 								</li>
 							</ul>
-							<!-- /Latest Blog Post -->
 
 						</div>
 
 						<div class="col-md-2">
 
-							<!-- Links -->
 							<h4 class="letter-spacing-1">EXPLORE SMARTY</h4>
 							<ul class="footer-links list-unstyled">
 								<li><a href="#">Home</a></li>
@@ -227,13 +175,11 @@
 								<li><a href="#">Smarty Tour</a></li>
 								<li><a href="#">Contact Us</a></li>
 							</ul>
-							<!-- /Links -->
 
 						</div>
 
 						<div class="col-md-4">
 
-							<!-- Newsletter Form -->
 							<h4 class="letter-spacing-1">KEEP IN TOUCH</h4>
 							<p>Subscribe to Our Newsletter to get Important News &amp; Offers</p>
 
@@ -246,9 +192,7 @@
 									</span>
 								</div>
 							</form>
-							<!-- /Newsletter Form -->
 
-							<!-- Social Icons -->
 							<div class="margin-top-20">
 								<a href="#" class="social-icon social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
 
@@ -277,7 +221,6 @@
 								</a>
 
 							</div>
-							<!-- /Social Icons -->
 
 						</div>
 
@@ -296,22 +239,16 @@
 					</div>
 				</div>
 			</footer>
-			<!-- /FOOTER -->
 
 		</div>
-		<!-- /wrapper -->
 
-
-		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
-
-		<!-- PRELOADER -->
 		<div id="preloader">
 			<div class="inner">
 				<span class="loader"></span>
 			</div>
-		</div><!-- /PRELOADER -->
+		</div>
 
 
 		<!-- JAVASCRIPT FILES -->

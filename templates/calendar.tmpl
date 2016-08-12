@@ -25,20 +25,13 @@
 		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
 	</head>
-	<!--
-		.boxed = boxed version
-	-->
+
 	<body>
 
-
-		<!-- WRAPPER -->
 		<div id="wrapper">
+
 			{{ template "adminnavbar.tmpl" . }}
 
-			<!--
-				ASIDE
-				Keep it outside of #wrapper (responsive purpose)
-			-->
 			<section id="middle">
 
 
@@ -74,17 +67,16 @@
 
 					<div class="col-sm-12 col-md-12 col-lg-9">
 
-						<!-- Panel -->
 						<div id="panel-calendar" class="panel panel-default">
 
 							<div class="panel-heading">
 
 								<span class="title elipsis">
-									<strong>CULTIVISOR EVENTS</strong> <!-- panel title -->
+									<strong>CULTIVISOR EVENTS</strong>
 								</span>
 
 
-								<div class="panel-options pull-right"><!-- panel options -->
+								<div class="panel-options pull-right">
 									<ul class="options list-unstyled">
 										<li>
 											<a href="#" class="opt dropdown-toggle" data-toggle="dropdown"><span class="label label-disabled"><span id="agenda_btn">Month</span> <span class="caret"></span></span></a>
@@ -97,35 +89,28 @@
 										</li>
 										<li><a href="#" class="opt panel_colapse" data-toggle="tooltip" title="Colapse" data-placement="bottom"></a></li>
 									</ul>
-								</div><!-- /panel options -->
+								</div>
 
 							</div>
 
-							<!-- panel content -->
 							<div class="panel-body">
 
-								<div id="calendar" data-modal-create="true"><!-- CALENDAR CONTAINER --></div>
+								<div id="calendar" data-modal-create="true"></div>
 
 							</div>
-							<!-- /panel content -->
 
 						</div>
-						<!-- /Panel -->
 
 					</div>
 
 				</div>
 
-
-
 				</div>
+
 			</section>
-			<!-- /MIDDLE -->
 
 		</div>
 
-
-		<!-- JAVASCRIPT FILES -->
 		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
 		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>

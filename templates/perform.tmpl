@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<title>P.E.R.F.O.R.M.</title>
@@ -11,9 +9,7 @@
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
-		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
@@ -29,10 +25,7 @@
 		<link href="/static/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 	</head>
 	<body class="smoothscroll enable-animation">
-		<!-- /SLIDE TOP -->
 
-
-		<!-- wrapper -->
 		<div id="wrapper">
 
 			<div id="header" class="sticky clearfix">
@@ -41,7 +34,6 @@
 
 			</div>
 
-			<!-- -->
 			<section>
 				<div class="container">
 					<div class="heading-title heading-color heading-border">
@@ -101,31 +93,24 @@
 
 						<div class="tab-content">
 							<div id="tab1" class="tab-pane fade in active">
-								<!-- <img class="pull-left" src="/static/images/demo/mockups/600x399/11-min.jpg" width="200" alt="" /> -->
 								<p class="lead"><span style="font-family:Orbitron">P.E.R.F.O.R.M.</span> is such a powerful tool for Talent Development because of one simple factor: everything is in one place! As you use the same software for common HR functions such as documenting the company's jobs and their tasks, keeping track of employees, and registering people for courses, etc., and as the Business Unit Managers use it to record employee reviews and coaching, it aggregates the insight it delivers to you by cross-referencing all of these factors that add up to better employee job performance.</p>
 							</div>
 							<div id="tab2" class="tab-pane fade">
-								<!-- <img class="pull-right" src="/static/images/demo/mockups/600x399/18-min.jpg" width="200" alt="" /> -->
 								<p class="lead">You can use <span style="font-family:Orbitron">P.E.R.F.O.R.M.</span> to do a little of your HR technology needs or do all of it, except for detailed Payroll and Benefits management. <span style="font-family:Orbitron">P.E.R.F.O.R.M.</span> can be your primary tool for employee tracking, development events tracking, and even emplpyee reviews, or it can be a supplement to any existing HRIS, to provide the results analysis. You will still want a software tool from your Payroll and Benefits vendor.</p>
 							</div>
 							<div id="tab3" class="tab-pane fade">
-								<!-- <img class="pull-left" src="/static/images/demo/mockups/600x399/11-min.jpg" width="200" alt="" /> -->
 								<p class="lead">We strive for the highest level of ease-of-use. Data entered in one place is leveraged for reuse and/or analysis in other places. All of the data on the factors that matter are organized by <span style="font-family:Orbitron">P.E.R.F.O.R.M.</span> and can be analyzed for meaning with just one mouse click.</p>
 							</div>
 							<div id="tab4" class="tab-pane fade">
-								<!-- <img class="pull-right" src="/static/images/demo/mockups/600x399/18-min.jpg" width="200" alt="" /> -->
 								<p class="lead">As you add in the actual job performance measurements, <span style="font-family:Orbitron">P.E.R.F.O.R.M.</span> connects all of your HR efforts to real world improvement, so you can FINALLY see and calculate, easily, the true impact of HR efforts on company profitability. You can turn the HR function into the profit center it truely is. (more on that in the Workforce Optimization section.)</p>
 							</div>
 							<div id="tab5" class="tab-pane fade">
-								<!-- <img class="pull-left" src="/static/images/demo/mockups/600x399/11-min.jpg" width="200" alt="" /> -->
 								<p class="lead">Oh, and just in case you were wondering, yes, we've made this a secure system! You must first sign in to <span style="font-family:Orbitron">P.E.R.F.O.R.M.</span>, and then you are given access to view your own information, and to view and edit the information for anyone in your reporting structure.</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- H3 -->
 			</section>
-			<!-- / -->
 			<section>
 				<div class="container">
 
@@ -253,7 +238,7 @@
 				</div>
 			</section>
 			<section class="alternate visable-xs hidden-md hidden-lg">
-				<div class="overlay dark-1"><!-- dark overlay [1 to 9 opacity] --></div>
+				<div class="overlay dark-1"></div>
 
 				<div class="container">
 
@@ -274,7 +259,7 @@
 				</div>
 			</section>
 			<section class="parallax parallax-2 hidden-xs" style="background-image: url('/static/images/demo/1200x800/1-min.jpg');">
-				<div class="overlay dark-8"><!-- dark overlay [1 to 9 opacity] --></div>
+				<div class="overlay dark-8"></div>
 
 				<div class="container">
 
@@ -310,32 +295,21 @@
 				</div>
 
 			</div>
-			<!-- /CALLOUT -->
 
-				{{ template "footer2.tmpl" . }}
+			{{ template "footer2.tmpl" . }}
 
 		</div>
-		<!-- /wrapper -->
 
-
-		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
-
-		<!-- PRELOADER -->
 		<div id="preloader">
 			<div class="inner">
 				<span class="loader"></span>
 			</div>
-		</div><!-- /PRELOADER -->
+		</div>
 
-
-		<!-- JAVASCRIPT FILES -->
 		{{ template "scripts.tmpl" . }}
 		{{ template "alert.tmpl" . }}
-
-		<!-- STYLESWITCHER - REMOVE -->
-		<!-- <script async type="text/javascript" src="/static/plugins/styleswitcher/styleswitcher.js"></script> -->
 
 		<script type="text/javascript">
 			$('i.arrow').click(function() {

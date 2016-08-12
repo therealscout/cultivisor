@@ -22,25 +22,16 @@
 		<link href="/static/adminassets/css/layout.css" rel="stylesheet" type="text/css" />
 		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
-        <!-- <link rel="stylesheet" href="/static/plugins/datatables/css/custom.css" media="screen" title="no title" charset="utf-8"> -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.css"/>
 
-
 	</head>
-	<!--
-		.boxed = boxed version
-	-->
+
 	<body>
 
-
-		<!-- WRAPPER -->
 		<div id="wrapper" class="clearfix">
 
 			{{ template "adminnavbar.tmpl" . }}
 
-			<!--
-				MIDDLE
-			-->
 			<section id="middle">
 
 				<div id="content" class="dashboard padding-20">
@@ -72,7 +63,6 @@
                         </thead>
                         <tbody>
                             {{ range $allMsgs := .allMsgs }}
-                                <!-- <tr class="clickable" data-url="/message/{{ $allMsgs.Id }}"></tr> -->
 								<tr data-messageId="{{ $allMsgs.Id }}"class="message">
 									<td>{{ $allMsgs.FullName }}</td>
 									<td>{{ $allMsgs.Subject }}</td>
@@ -85,14 +75,8 @@
                     </table>
                 </div>
 			</section>
-			<!-- /MIDDLE -->
 
 		</div>
-
-
-
-
-		<!-- JAVASCRIPT FILES -->
 
 		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
 		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
@@ -101,8 +85,6 @@
         <!-- CSS DATATABLES -->
         <link href="/static/css/layout-datatables.css" rel="stylesheet" type="text/css" />
 		{{ template "alert.tmpl" . }}
-
-
         <!-- JS DATATABLES -->
 		<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.js"></script>
         <script type="text/javascript" src="/static/plugins/datatables/js/jquery.dataTables.min.js"></script>
@@ -110,7 +92,7 @@
         <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.colReorder.min.js"></script>
         <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.scroller.min.js"></script>
         <script type="text/javascript" src="/static/plugins/datatables/dataTables.bootstrap.js"></script>
-        <!-- <script src="/static/plugins/datatables/js/custom.js" charset="utf-8"></script> -->
+
         <script type="text/javascript">
 			$(document).ready(function() {
 				$('tr.message').click(function() {

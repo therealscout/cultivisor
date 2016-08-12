@@ -22,25 +22,13 @@
 		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
 	</head>
-	<!--
-		.boxed = boxed version
-	-->
-	<body>
 
+		<body>
 
-		<!-- WRAPPER -->
 		<div id="wrapper" class="clearfix">
-
-			<!--
-				ASIDE
-				Keep it outside of #wrapper (responsive purpose)
-			-->
 
 			{{ template "adminnavbar.tmpl" . }}
 
-			<!--
-				MIDDLE
-			-->
 			<section id="middle">
 				<div id="content" class="dashboard padding-20">
 
@@ -57,7 +45,6 @@
 
 					<form class="validate" action="/news" method="post" enctype="multipart/form-data">
 						<fieldset>
-							<!-- required [php action request] -->
 							<input type="hidden" name="action" value="contact_send" />
 
 							<div class="row">
@@ -108,7 +95,6 @@
 											File Attachment
 											<small class="text-muted"></small>
 										</label>
-										<!-- custom file upload -->
 										<input class="custom-file-upload" name="image" type="file" id="file" data-btn-text="Select a File" />
 										<small class="text-muted block">Max file size: 10Mb (jpg/png) &nbsp;&nbsp;&nbsp; Supported sizes: (1200x800, 900x600, 600x400)</small>
 										<div class="text-right">
@@ -137,22 +123,17 @@
 						{{ end }}
 					</form>
 				</div>
+
 			</section>
-			<!-- /MIDDLE -->
 
 		</div>
-
-
-
-
-		<!-- JAVASCRIPT FILES -->
 
 		<script type="text/javascript">var plugin_path = '/static/adminassets/plugins/';</script>
 		<script type="text/javascript" src="/static/adminassets/plugins/jquery/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="/static/adminassets/js/app.js"></script>
 
 		{{ template "alert.tmpl" . }}
-		<!-- PAGE LEVEL SCRIPT -->
+
 		<script type="text/javascript">
 			$('#delButton').click(function(){
 				$('#delAlert').removeClass('hide')

@@ -22,18 +22,13 @@
 		<link href="/static/adminassets/css/layout.css" rel="stylesheet" type="text/css" />
 		<link href="/static/adminassets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
-        <!-- <link rel="stylesheet" href="/static/plugins/datatables/css/custom.css" media="screen" title="no title" charset="utf-8"> -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/r-2.1.0/datatables.min.css"/>
 
 
 	</head>
-	<!--
-		.boxed = boxed version
-	-->
+
 	<body>
 
-
-		<!-- WRAPPER -->
         <div id="wrapper" class="clearfix">
 
 			{{ template "adminnavbar.tmpl" . }}
@@ -58,7 +53,6 @@
                         </thead>
                         <tbody>
                             {{ range $news := .allNews }}
-                                <!-- <tr class="clickable" data-url="/news/{{ $news.Id }}"></tr> -->
 								<tr data-newsId="{{ $news.Id}}" class="news">
 									<td>{{ $news.Title }}</td>
 									<td>{{ $news.FirstName }}</td>
@@ -90,7 +84,6 @@
         <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.colReorder.min.js"></script>
         <script type="text/javascript" src="/static/plugins/datatables/js/dataTables.scroller.min.js"></script>
         <script type="text/javascript" src="/static/plugins/datatables/dataTables.bootstrap.js"></script>
-        <!-- <script src="/static/plugins/datatables/js/custom.js" charset="utf-8"></script> -->
         <script type="text/javascript">
 			$(document).ready(function() {
 				$('tr.news').click(function() {
