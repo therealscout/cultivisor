@@ -66,9 +66,12 @@
 
 							<ul class="pager">
 
-								<li class="previous"><a class="noborder" href="/article/{{ .news.Id }}">&larr; Previous Post</a></li>
-								<li class="next"><a class="noborder" href="/article/{{ .news.Id }}">Next Post &rarr;</a></li>
-
+								{{ if ne .prev "" }}
+								<li class="previous"><a class="noborder" href="/article/{{ .prev }}">&larr; Previous Post</a></li>
+								{{ end }}
+								{{ if ne .next ""}}
+								<li class="next"><a class="noborder" href="/article/{{ .next }}">Next Post &rarr;</a></li>
+								{{ end }}
 							</ul>
 
 							<div class="divider"></div>

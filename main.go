@@ -254,10 +254,13 @@ var articleView = web.Route{"GET", "/article/:id", func(w http.ResponseWriter, r
 	db.GetAll("news", &allNews)
 	db.Get("news", id, &news)
 	sort.Stable(allNews)
+	prev, next := allNews.Whatever(id)
 	tmpl.Render(w, r, "article.tmpl", web.Model{
 		"news":       news,
 		"allNews":    allNews,
 		"footerNews": getFooterNews(),
+		"prev":       prev,
+		"next":       next,
 	})
 }}
 

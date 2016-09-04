@@ -49,3 +49,19 @@ func (n NewsSorted) Less(i, j int) bool {
 func (n NewsSorted) Swap(i, j int) {
 	n[i], n[j] = n[j], n[i]
 }
+
+func (n NewsSorted) Whatever(id string) (string, string) {
+	var prev, next string
+	for i, news := range n {
+		if news.Id == id {
+			if i > 0 {
+				prev = n[i-1].Id
+			}
+			if i < len(n)-1 {
+				next = n[i+1].Id
+			}
+			break
+		}
+	}
+	return prev, next
+}
