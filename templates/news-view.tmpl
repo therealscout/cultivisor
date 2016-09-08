@@ -97,16 +97,16 @@
 										</label>
 										<input class="custom-file-upload" name="image" type="file" id="file" data-btn-text="Select a File" />
 										<small class="text-muted block">Max file size: 10Mb (jpg/png) &nbsp;&nbsp;&nbsp; Supported sizes: (1200x800, 900x600, 600x400)</small>
-										<div class="text-right">
-											<button type="submit" class="btn btn-3d btn-teal btn-md margin-right-10 margin-top-30">
+										<div class="text-center">
+											<button type="submit" class="btn btn-block btn-info btn-md margin-right-10 margin-top-30">
 												{{ if .news.Id }}Edit{{ else }}Add{{ end }} Article
 											</button>
-											<a href="/news" class="btn btn-3d btn-warning btn-md margin-right-10 margin-top-30">Cancel</a>
-											<a id="delButton" class="btn btn-3d btn-danger btn-md margin-right-10 margin-top-30">Delete</a>
+											<a href="/news" class="btn btn-block btn-warning btn-md margin-right-10">Cancel</a>
+											<a id="delButton" class="btn btn-block btn-danger btn-md margin-right-10">Delete</a>
 										</div>
 									</div>
 									{{ if .news.Image }}
-									<div class="col-md-4 col-md-offset-1">
+									<div class="col-md-4 col-md-offset-1 margin-top-30">
 										<img src="/upload/news/{{ .news.Id }}.png" class="img-responsive" alt="" />
 									</div>
 									{{ end }}

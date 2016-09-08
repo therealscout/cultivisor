@@ -94,15 +94,15 @@
 										</label>
 										<input class="custom-file-upload" name="image" type="file" id="file" data-btn-text="Select a File" />
 										<small class="text-muted block">Max file size: 10Mb (jpg/png) &nbsp; Supported size: (600x800) &nbsp;&nbsp;&nbsp;</small>
-										<div class="text-right">
-											<button type="submit" class="btn btn-3d btn-teal btn-md margin-right-10 margin-top-30">
+										<div class="text-center">
+											<button type="submit" class="btn btn-block btn-info btn-md margin-right-10 margin-top-30">
 												{{ if .employee.Id }}Edit{{ else }}Add{{ end }} Employee
 											</button>
-											<a href="/employee" class="btn btn-3d btn-warning btn-md margin-right-10 margin-top-30">Cancel</a>
-											<a id="delButton" class="btn btn-3d btn-danger btn-md margin-right-10 margin-top-30">Delete</a>
+											<a href="/employee" class="btn btn-block btn-warning btn-md margin-right-10">Cancel</a>
+											<a id="delButton" class="btn btn-block btn-danger btn-md margin-right-10">Delete</a>
 										</div>
-										<div class="text-right margin-top-20">
-											<label class="switch switch-success switch-round">
+										<div class="text-left margin-top-20">
+											<label class="switch switch-info switch-round">
 												<span> Display on Main Page? &nbsp;&nbsp;</span>
 												<input type="checkbox" name="mainPage" value="true" {{ if .employee.MainPage }}checked="true"{{ end }}>
 												<span class="switch-label" data-on="YES" data-off="NO"></span>
@@ -112,7 +112,7 @@
 									</div>
 								</div>
 								{{ if .employee.Image }}
-								<div class="col-md-4 col-md-offset-1">
+								<div class="col-md-4 col-md-offset-1 margin-top-30">
 									<img src="/upload/employee/{{ .employee.Id }}.png" class="img-responsive" alt="" />
 								</div>
 								{{ end }}

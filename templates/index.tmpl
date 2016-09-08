@@ -46,7 +46,7 @@
 					<div class="swiper-wrapper">
 
 						<div class="swiper-slide" style="background-image: url('/static/images/demo/1200x800/20-min.jpg');">
-							<div class="overlay dark-3"></div>
+							<div class="overlay dark-4"></div>
 
 							<div class="display-table">
 								<div class="display-table-cell vertical-align-middle">
@@ -68,7 +68,7 @@
 
 						</div>
 
-						<!-- <div class="swiper-slide" style="background-image: url('/static/images/demo/1200x800/18-MIN.jpg');">
+						<div class="swiper-slide" style="background-image: url('/static/images/demo/1200x800/18-min.jpg');">
 							<div class="overlay dark-4"></div>
 
 							<div class="display-table">
@@ -89,7 +89,7 @@
 								</div>
 							</div>
 
-						</div> -->
+						</div>
 
 					</div>
 
@@ -105,8 +105,9 @@
 					<div class="container">
 
 						<div class="text-center">
-							<h3 class="size-30"><span>Who is Cultivisor</span></h3>
-							<p>We've spent over 20 years helping HR Professionals PROVE the impact of Talent Development efforts on their company's bottom line. Now we're making available to everyone the tool that enables this!</p>
+							<h3 class="size-40"><span>Who is Cultivisor</span></h3>
+							<br>
+							<p>We've spent over 20 years helping HR Professionals <strong>PROVE</strong> the impact of Talent Development efforts on their company's bottom line. Now we're making available to <strong>EVERYONE</strong> the tool that enables this!</p>
 						</div>
 
 					</div>
@@ -316,7 +317,7 @@
 				<div class="container">
 
 					<header class="text-center margin-bottom-60">
-						<h2><span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span></h2>
+						<h1><span style="font-family:Orbitron;"> P.E.R.F.O.R.M.</span></h1>
 						<p class="lead font-lato">20th Anniversary Edition</p>
 						<hr/>
 					</header>
@@ -523,12 +524,12 @@
 				<div class="box-light padding-top-60 padding-bottom-40">
 					<div class="container">
 						<header class="text-center margin-bottom-60">
-							<h2>OUR TEAM</h2>
+							<h1>OUR TEAM</h1>
 							<p class="lead font-lato">We meet and get to know you. You tell us and we listen.</p>
 							<p class="lead">Your success is our success.  It all comes down to your people!</p>
 							<hr />
 							<p class="visible-sm visible-xs">Swipe To View Our Team!</p>
-							<a href="/team" class="btn btn-lg btn-hvr hvr-bounce-to-bottom hidden-sm hidden-xs">View Our Team</a>
+							<a href="/team" class="btn btn-lg btn-hvr hvr-shutter-out-horizontal hidden-sm hidden-xs">View Our Whole Team</a>
 						</header>
 						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 8000, "navigation": true, "pagination": false}'>
 							{{ range $employee := .allEmployee}}
@@ -578,12 +579,11 @@
 				<div class="box-light padding-top-60 padding-bottom-40">
 					<div class="container">
 						<header class="text-center margin-bottom-60">
-							<h2>OUR TEAM</h2>
+							<h1>OUR TEAM</h1>
 							<p class="lead font-lato">We meet and get to know you. You tell us and we listen.</p>
 							<p class="lead">Your success is our success.  It all comes down to your people!</p>
 							<hr />
 							<p class="visible-sm visible-xs">Swipe To View Our Team!</p>
-							<a href="/team" class="btn btn-lg btn-hvr hvr-bounce-to-bottom hidden-sm hidden-xs">View Our Team</a>
 						</header>
 						<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"3", "autoPlay": 8000, "navigation": true, "pagination": false}'>
 							{{ range $employee := .allEmployee}}
@@ -603,19 +603,19 @@
 									</ul>
 									<hr/>
 									{{ if $employee.Facebook }}
-									<a href="https://www.facebook.com/{{ $employee.Facebook }}" class="social-icon social-icon-sm social-facebook">
+									<a href="https://www.facebook.com/{{ $employee.Facebook }}" target="_blank" class="social-icon social-icon-sm social-facebook">
 										<i class="fa fa-facebook"></i>
 										<i class="fa fa-facebook"></i>
 									</a>
 									{{ end }}
 									{{ if $employee.Twitter }}
-									<a href="https://www.twitter.com/{{ $employee.Twitter }}" class="social-icon social-icon-sm social-twitter">
+									<a href="https://www.twitter.com/{{ $employee.Twitter }}" target="_blank" class="social-icon social-icon-sm social-twitter">
 										<i class="fa fa-twitter"></i>
 										<i class="fa fa-twitter"></i>
 									</a>
 									{{ end }}
 									{{ if $employee.Linkedin }}
-									<a href="https://www.linkedin.com/{{ $employee.Linkedin }}" class="social-icon social-icon-sm social-linkedin">
+									<a href="https://www.linkedin.com/{{ $employee.Linkedin }}" target="_blank" class="social-icon social-icon-sm social-linkedin">
 										<i class="fa fa-linkedin"></i>
 										<i class="fa fa-linkedin"></i>
 									</a>
