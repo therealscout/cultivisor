@@ -43,16 +43,12 @@
 							<h1 class="blog-post-title">{{ .news.Title }}</h1>
 							<ul class="blog-post-info list-inline">
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i>
-                                        <span class="font-lato">{{ .news.FirstName }} {{ .news.LastName }}</span>
-                                    </a>
+                                    <i class="fa fa-user"></i>
+                                    <span class="font-lato">{{ .news.FirstName }} {{ .news.LastName }}</span>
                                 </li>
 								<li>
-									<a href="#">
-										<i class="fa fa-clock-o"></i>
-										<span class="font-lato">{{ prettyDate .news.Id }}</span>
-									</a>
+									<i class="fa fa-clock-o"></i>
+									<span class="font-lato">{{ prettyDate .news.Id }}</span>
 								</li>
 							</ul>
 
