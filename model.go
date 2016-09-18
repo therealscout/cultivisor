@@ -50,6 +50,20 @@ func (n NewsSorted) Swap(i, j int) {
 	n[i], n[j] = n[j], n[i]
 }
 
+type EmployeesSorted []Employee
+
+func (e EmployeesSorted) Len() int {
+	return len(e)
+}
+
+func (e EmployeesSorted) Less(i, j int) bool {
+	return e[i].Id > e[j].Id
+}
+
+func (e EmployeesSorted) Swap(i, j int) {
+	e[i], e[j] = e[j], e[i]
+}
+
 func (n NewsSorted) Whatever(id string) (string, string) {
 	var prev, next string
 	for i, news := range n {

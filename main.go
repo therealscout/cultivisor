@@ -42,7 +42,7 @@ func main() {
 var index = web.Route{"GET", "/", func(w http.ResponseWriter, r *http.Request) {
 	var es []Employee
 	db.GetAll("employee", &es)
-	var employees []Employee
+	var employees EmployeesSorted
 	for _, e := range es {
 		if e.MainPage {
 			employees = append(employees, e)
@@ -129,8 +129,9 @@ var publiccourse = web.Route{"GET", "/publiccourse", func(w http.ResponseWriter,
 }}
 
 var team = web.Route{"GET", "/team", func(w http.ResponseWriter, r *http.Request) {
-	var employee []Employee
+	var employee EmployeesSorted
 	db.GetAll("employee", &employee)
+	fmt.Print(employee)
 	tmpl.Render(w, r, "team.tmpl", web.Model{
 		"allEmployee": employee,
 		"footerNews":  getFooterNews(),
