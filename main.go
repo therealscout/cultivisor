@@ -10,6 +10,8 @@ import (
 	"strconv"
 	"time"
 
+	"gopkg.in/gomail.v2"
+
 	"github.com/cagnosolutions/repono"
 	"github.com/cagnosolutions/web"
 )
@@ -161,6 +163,19 @@ var logout = web.Route{"GET", "/logout", func(w http.ResponseWriter, r *http.Req
 }}
 
 var send = web.Route{"POST", "/send", func(w http.ResponseWriter, r *http.Request) {
+	s := gomail.NewMessage()
+	s.SetAddressHeader("From", r.FormValue("email"), r.FormValue("fullname"))
+	s.SetHeader("From", "cultivisormail@gmail.com")
+	s.SetHeader("To", "paige.macaulay@cultivisor.com")
+	s.SetHeader("Subject", r.FormValue("subject"))
+	b := "<h2>(NO REPLY)</h2>" + "<br>" + "From: " + r.FormValue("fullname") + "<br><br>" + r.FormValue("message") + "<br><br>" + "<h3>Contact Information</h3>" + "<br>" + "Email: " + r.FormValue("email") + "<br>" + "Phone: " + r.FormValue("phone")
+	s.SetBody("text/html", b)
+
+	d := gomail.NewDialer("smtp.gmail.com", 587, "cultivisormail@gmail.com", "cultivisor")
+
+	if err := d.DialAndSend(s); err != nil {
+		panic(err)
+	}
 
 	id := strconv.Itoa(int(time.Now().UnixNano()))
 	question, _ := strconv.ParseBool(r.FormValue("question"))

@@ -27,13 +27,13 @@
 	background-color:transparent;
 	padding-left:0 !important;
 	padding-right:0 !important;
-} 
-#topMain.nav-pills>li:hover>a, 
+}
+#topMain.nav-pills>li:hover>a,
 #topMain.nav-pills>li:focus>a {
 	color:#1F262D;
 }
 #topMain.nav-pills>li.active>a>span.theme-color,
-#topMain.nav-pills>li:hover>a>span.theme-color, 
+#topMain.nav-pills>li:hover>a>span.theme-color,
 #topMain.nav-pills>li:focus>a>span.theme-color {
 	background-color:rgba(0,0,0,0.01);
 }
